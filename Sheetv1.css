@@ -1,0 +1,544 @@
+.sheet-main {
+  min-width: 794px;
+  min-height: 1122px;
+  width: 794px;
+  height: 1122px;
+  background-image: url("https://github.com/jooaij/SurvivalWorld/blob/master/Character%20Sheet%20v0%20-%20netver.png?raw=true");
+  background-size: contain;
+  display:block;
+  position:relative;
+}
+
+/*----------------- GENERAL CSS ------------------*/
+
+.sheet-Hidden{
+    display:none;
+}
+
+input, select, textarea, button{
+    position:absolute;
+    display:none;
+}
+
+input, select, textarea{
+    background: transparent;
+    border: none;
+}
+
+.sheet-section {
+    padding: 5px;
+    border-style: solid;
+}
+
+.sheet-flex-col {
+  display: flex;
+  flex-flow: row wrap;
+  /*justify-content: flex-start;*/
+}
+
+.sheet-flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+/*------------- Top part -------------------------*/
+
+.attr_character_name{
+    display:inline;
+    top:24px;
+    left:75px;
+    width:290px;
+}
+
+.attr_level{
+    display:inline;
+    top:24px;
+    left:460px;
+    width:34px !important;
+}
+
+.attr_experience{
+    display:inline;
+    top:24px;
+    left:660px;
+    width:80px !important;
+}
+
+.attr_trade{
+    display:inline;
+    top:97px;
+    left:100px;
+    width:160px;
+}
+
+.attr_tradedesc{
+    display:inline;
+    top:102px;
+    left:280px;
+    width:400px;
+    position:absolute;
+}
+
+.attr_temper{
+    display:inline;
+    top:145px;
+    left:100px;
+    width:160px;
+}
+
+.attr_temperdesc{
+    display:inline;
+    top:151px;
+    left:280px;
+    width:500px;
+    position:absolute;
+}
+
+/*------------- Attribute part -------------------------*/
+
+.sheet-numbox {
+    width:20px !important;
+    height:20px !important;
+}
+
+.attr_Brawn{
+    display:inline;
+    top:250px;
+    left:45px;
+}
+
+.attr_BrawnWounds{
+    display:inline;
+    top:250px;
+    left:89px;
+}
+
+.attr_Agility{
+    display:inline;
+    top:250px;
+    left:175px;
+}
+
+.attr_AgilityWounds{
+    display:inline;
+    top:250px;
+    left:219px;
+}
+
+.attr_Endurance{
+    display:inline;
+    top:250px;
+    left:299px;
+}
+
+.attr_EnduranceWounds{
+    display:inline;
+    top:250px;
+    left:343px;
+}
+
+.attr_Perception{
+    display:inline;
+    top:250px;
+    left:426px;
+}
+
+.attr_PerceptionWounds{
+    display:inline;
+    top:250px;
+    left:470px;
+}
+
+.attr_Smarts{
+    display:inline;
+    top:250px;
+    left:554px;
+}
+
+.attr_SmartsWounds{
+    display:inline;
+    top:250px;
+    left:598px;
+}
+
+.attr_Charisma{
+    display:inline;
+    top:250px;
+    left:684px;
+}
+
+.attr_CharismaWounds{
+    display:inline;
+    top:250px;
+    left:728px;
+}
+
+/*------------- Skills ---------------------------*/
+
+.sheet-btn_closecombat{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/closecombat_blk.png');
+    left:32px;
+}
+
+.sheet-btn_firearms{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/shootingfirearms_blk.png');
+    top:326px;
+    left:32px;
+}
+
+.sheet-btn_sharpshooting{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/sharpshooting_blk.png');
+    top:343px;
+    left:32px;
+}
+
+.sheet-btn_heavyweaponry{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/heavyweaponry_blk.png');
+    top:360px;
+    left:32px;
+}
+
+.sheet-btn_explosives{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/usingexplosives_blk.png');
+    top:377px;
+    left:32px;
+}
+
+.sheet-btn_athletics{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/athletics_blk.png');
+    top:394px;
+    left:32px;
+}
+
+.sheet-btn_sneaking{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/sneaking_blk.png');
+    top:411px;
+    left:32px;
+}
+
+.sheet-btn_pathfinding{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/pathfinding_blk.png');
+    top:428px;
+    left:32px;
+}
+
+.sheet-btn_driving{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/driving_blk.png');
+    top:445px;
+    left:32px;
+}
+
+.sheet-btn_lockpicking{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/lockpicking_blk.png');
+    top:462px;
+    left:32px;
+}
+
+.sheet-btn_stealing{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/stealing_blk.png');
+    top:479px;
+    left:32px;
+}
+
+.sheet-btn_scavenging{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/scavenging_blk.png');
+    top:496px;
+    left:32px;
+}
+
+.sheet-btn_chemistry{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/chemistry_blk.png');
+    top:513px;
+    left:32px;
+}
+
+.sheet-btn_electronics{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/electronics_blk.png');
+    top:530px;
+    left:32px;
+}
+
+.sheet-btn_mechanics{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/mechanics_blk.png');
+    top:547px;
+    left:32px;
+}
+
+.sheet-btn_treatingwounds{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/treatingwounds_blk.png');
+    top:564px;
+    left:32px;
+}
+
+.sheet-btn_intimidation{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/intimidation_blk.png');
+    top:580px;
+    left:32px;
+}
+
+.sheet-btn_bluffing{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/bluffing_blk.png');
+    top:597px;
+    left:32px;
+}
+
+.sheet-btn_charming{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/charming_blk.png');
+    top:614px;
+    left:32px;
+}
+
+.sheet-btn_trading{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/trading_blk.png');
+    top:631px;
+    left:32px;
+}
+
+.sheet-btn_closecombat:hover{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/closecombat_blu.png');
+}
+
+.sheet-btn_firearms:hover{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/shootingfirearms_blu.png');
+}
+
+.sheet-btn_sharpshooting:hover{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/sharpshooting_blu.png');
+}
+
+.sheet-btn_heavyweaponry:hover{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/heavyweaponry_blu.png');
+}
+
+.sheet-btn_explosives:hover{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/usingexplosives_blu.png');
+}
+
+.sheet-btn_athletics:hover{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/athletics_blu.png');
+}
+
+.sheet-btn_sneaking:hover{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/sneaking_blu.png');
+}
+
+.sheet-btn_pathfinding:hover{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/pathfinding_blu.png');
+}
+
+.sheet-btn_driving:hover{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/driving_blu.png');
+}
+
+.sheet-btn_lockpicking:hover{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/lockpicking_blu.png');
+}
+
+.sheet-btn_stealing:hover{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/stealing_blu.png');
+}
+
+.sheet-btn_scavenging:hover{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/scavenging_blu.png');
+}
+
+.sheet-btn_chemistry:hover{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/chemistry_blu.png');
+}
+
+.sheet-btn_electronics:hover{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/electronics_blu.png');
+}
+
+.sheet-btn_mechanics:hover{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/mechanics_blu.png');
+}
+
+.sheet-btn_treatingwounds:hover{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/treatingwounds_blu.png');
+}
+
+.sheet-btn_intimidation:hover{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/intimidation_blu.png');
+}
+
+.sheet-btn_bluffing:hover{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/bluffing_blu.png');
+}
+
+.sheet-btn_charming:hover{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/charming_blu.png');
+}
+
+.sheet-btn_trading:hover{
+	background-image: url('https://raw.githubusercontent.com/jooaij/SurvivalWorld/master/trading_blu.png');
+}
+
+.sheet-skillmod{
+    left:165px;
+    display:inline;
+    height:13px !important;
+    font-size:9px;
+    width:16px !important;
+}
+
+.sheet-prof{
+    left:200px;
+    display:inline;
+}
+
+.sheet-adv{
+    left:242px;
+    display:inline;
+}
+
+.sheet-exp{
+    left:278px;
+    display:inline;
+}
+
+.sheet-skillwnd{
+    left:315px;
+    display:inline;
+    height:13px !important;
+    font-size:9px;
+    width:18px !important;
+}
+
+.sheet-skill_closecombat{
+    top:309px;
+}
+
+.sheet-skill_firearms{
+    top:326px;
+}
+
+.sheet-skill_sharpshooting{
+    top:343px;
+}
+
+.sheet-skill_heavyweaponry{
+    top:360px;
+}
+
+.sheet-skill_explosives{
+    top:377px;
+}
+
+.sheet-skill_athletics{
+    top:394px;
+}
+
+.sheet-skill_sneaking{
+    top:411px;
+}
+
+.sheet-skill_pathfinding{
+    top:428px;
+}
+
+.sheet-skill_driving{
+    top:445px;
+}
+
+.sheet-skill_lockpicking{
+    top:462px;
+}
+
+.sheet-skill_stealing{
+    top:479px;
+}
+
+.sheet-skill_scavenging{
+    top:496px;
+}
+
+.sheet-skill_chemistry{
+    top:513px;
+}
+
+.sheet-skill_electronics{
+    top:530px;
+}
+
+.sheet-skill_mechanics{
+    top:547px;
+}
+
+.sheet-skill_treatingwounds{
+    top:564px;
+}
+
+.sheet-skill_intimidation{
+    top:580px;
+}
+
+.sheet-skill_bluffing{
+    top:597px;
+}
+
+.sheet-skill_charming{
+    top:614px;
+}
+
+.sheet-skill_trading{
+    top:631px;
+}
+
+/*------------- Text boxes -----------------------*/
+
+.attr_bonds{
+    display:inline;
+    top:308px;
+    left:380px;
+    width:385px;
+    height:320px;
+}
+
+.attr_inventory{
+    display:inline;
+    top:695px;
+    left:380px;
+    width:385px;
+    height:400px;
+}
+
+/*------------- Section-specific CSS -------------*/
+
+.sheet-inline{
+ display:inline;   
+}
+
+.sheet-longbox{
+ width:550 px;   
+ max-width:550 px;
+ min-width:550 px;
+}
+
+button.sheet-textbutton {
+	display:inline;
+  border: none;
+  padding: 0!important;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+  
+	background-repeat:no-repeat;
+	width:140px;
+	height:14px;
+	background-color:#fff;
+}
+
+button[type='roll']:before{
+ content:"" !important;   
+}
+}
