@@ -1,0 +1,409 @@
+<div class="main">
+    <div class="header flex-center section">
+      <h1>Survival World</h1>
+      <label class='inline'>Name:</label> <input class="longbox" name="attr_character_name" type="text"/>
+      <label class='inline'>Level:</label><input name="attr_level" type="number" />
+      <label class='inline'>Experience:</label><input name="attr_experience" type="number" />
+      <br/>
+      <label class='inline'>Trade:</label> <select class="longbox" name="attr_trade">
+          <options>
+              <option>Driver</option>
+              <option>Tinker</option>
+              <option>Scout</option>
+              <option>Gunner</option>
+              <option>Scientist</option>
+              <option>Medic</option>
+              <option>Spokesman</option>
+          </options>
+      </select>
+      <span name='attr_tradedesc'></span>
+      <br/>
+      <label class='inline'>Temper:</label> <select class="longbox" name="attr_temper">
+          <options>
+              <option>Hot-headed</option>
+              <option>Cautious</option>
+              <option>Straight-shooting</option>
+              <option>Twisted</option>
+              <option>Level-headed</option>
+          </options>
+      </select>
+      <span name='attr_temperdesc'></span>
+    </div>
+    <div class="stats section">
+      <label>BRN </label>
+      <button type='roll' value='/roll 2d6 + @{BrawnMod}' name='roll_BrawnCheck'></button>
+      <input type="number" name="attr_Brawn" value="0"/>
+      <input type="number" name="attr_BrawnWounds" value="0"/>
+      <input type="number" name="attr_BrawnMod" value="@{Brawn}-@{BrawnWounds}" disabled="true" />
+      <input type="number" name="attr_BrawnSecondaryMod" class="Hidden" />
+	  <input type="number" name="attr_BrawnSecondaryMod_Vis" value="@{BrawnSecondaryMod}" disabled="true" />
+      <label>AGI </label>
+      <button type='roll' value='/roll 2d6 + @{AgilityMod}' name='roll_AgilityCheck'></button>
+      <input type="number" name="attr_Agility" value="0"/>
+      <input type="number" name="attr_AgilityWounds" value="0"/>
+      <input type="number" name="attr_AgilityMod" value="@{Agility}-@{AgilityWounds}" disabled="true" />
+      <input type="number" name="attr_AgilitySecondaryMod" class="Hidden" />
+	  <input type="number" name="attr_AgilitySecondaryMod_Vis" value="@{AgilitySecondaryMod}" disabled="true" />
+      <label>END </label>
+      <button type='roll' value='/roll 2d6 + @{EnduranceMod}' name='roll_EnduranceCheck'></button>
+      <input type="number" name="attr_Endurance" value="0"/>
+      <input type="number" name="attr_EnduranceWounds" value="0"/>
+      <input type="number" name="attr_EnduranceMod" value="@{Endurance}-@{EnduranceWounds}" disabled="true" />
+      <input type="number" name="attr_EnduranceSecondaryMod" class="Hidden" disabled="true" />
+	  <input type="number" name="attr_EnduranceSecondaryMod_Vis" value="@{EnduranceSecondaryMod}" disabled="true" />
+      <label>PER </label>
+      <button type='roll' value='/roll 2d6 + @{PerceptionMod}' name='roll_PerceptionCheck'></button>
+      <input type="number" name="attr_Perception" value="0"/>
+      <input type="number" name="attr_PerceptionWounds" value="0"/>
+      <input type="number" name="attr_PerceptionMod" value="@{Perception}-@{PerceptionWounds}" disabled="true" />
+      <input type="number" name="attr_PerceptionSecondaryMod" class="Hidden" />
+	  <input type="number" name="attr_PerceptionSecondaryMod_Vis" value="@{PerceptionSecondaryMod}" disabled="true" />
+      <label>SMR </label>
+      <button type='roll' value='/roll 2d6 + @{SmartsMod}' name='roll_SmartsCheck'></button>
+      <input type="number" name="attr_Smarts" value="0"/>
+      <input type="number" name="attr_SmartsWounds" value="0"/>
+      <input type="number" name="attr_SmartsMod" value="@{Smarts}-@{SmartsWounds}" disabled="true" />
+      <input type="number" name="attr_SmartsSecondaryMod" class="Hidden"/>
+	  <input type="number" name="attr_SmartsSecondaryMod_Vis" value="@{SmartsSecondaryMod}" disabled="true" />
+      <label>CHA </label>
+      <button type='roll' value='/roll 2d6 + @{CharismaMod}' name='roll_CharismaCheck'></button>
+      <input type="number" name="attr_Charisma" value="0"/>
+      <input type="number" name="attr_CharismaWounds" value="0"/>
+      <input type="number" name="attr_CharismaMod" value="@{Charisma}-@{CharismaWounds}" disabled="true" />
+      <input type="number" name="attr_CharismaSecondaryMod" class="Hidden" />
+	  <input type="number" name="attr_CharismaSecondaryMod_Vis" value="@{CharismaSecondaryMod}" disabled="true" />
+    </div>
+    <div class="skills section flex-col">
+      <label>Skills</label>
+      <table class='skilltable'>
+          <tr>
+              <td>Skill</td>
+              <td>Prof</td>
+              <td>Adv</td>
+              <td>Exp</td>
+              <td>Wnd</td>
+              <td>Total</td>
+          </tr>
+          <tr>
+              <td><button class='textbutton' type='roll' value='?{Choose a Stat|
+   BRN,/roll 2d6 + @{BrawnMod}+@{SkillCloseCombatMod}|
+   agi,/roll 2d6 + @{AgilitySecondaryMod}+@{SkillCloseCombatMod}}' name='roll_SkillCloseCombatCheck'>Close combat</button></td>
+              <td><input type='checkbox' name='attr_SkillCloseCombatProf' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillCloseCombatAdv' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillCloseCombatExp' value='1' /></td>
+              <td><input type="number" name="attr_SkillCloseCombatWounds" value="0"/></td>
+              <td><input type="number" name="attr_SkillCloseCombatMod" value="@{SkillCloseCombatProf}+@{SkillCloseCombatAdv}+@{SkillCloseCombatExp}-@{SkillCloseCombatWounds}" disabled="true" /></td>
+          </tr>
+          <tr>
+              <td><button class='textbutton' type='roll' value='?{Choose a Stat|
+   PER,/roll 2d6 + @{PerceptionMod}+@{SkillShootingFirearmsMod}|
+   agi,/roll 2d6 + @{AgilitySecondaryMod}+@{SkillShootingFirearmsMod}}' name='roll_SkillShootingFirearmsCheck'>Shooting firearms</button></td>
+              <td><input type='checkbox' name='attr_SkillShootingFirearmsProf' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillShootingFirearmsAdv' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillShootingFirearmsExp' value='1' /></td>
+              <td><input type="number" name="attr_SkillShootingFirearmsWounds" value="0"/></td>
+              <td><input type="number" name="attr_SkillShootingFirearmsMod" value="@{SkillShootingFirearmsProf}+@{SkillShootingFirearmsAdv}+@{SkillShootingFirearmsExp}-@{SkillShootingFirearmsWounds}" disabled="true" /></td>
+          </tr>
+          <tr>
+              <td><button class='textbutton' type='roll' value='?{Choose a Stat|
+   PER,/roll 2d6 + @{PerceptionMod}+@{SkillSharpshootingMod}}' name='roll_SkillSharpshootingCheck'>Sharpshooting</button></td>
+              <td><input type='checkbox' name='attr_SkillSharpshootingProf' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillSharpshootingAdv' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillSharpshootingExp' value='1' /></td>
+              <td><input type="number" name="attr_SkillSharpshootingWounds" value="0"/></td>
+              <td><input type="number" name="attr_SkillSharpshootingMod" value="@{SkillSharpshootingProf}+@{SkillSharpshootingAdv}+@{SkillSharpshootingExp}-@{SkillSharpshootingWounds}" disabled="true" /></td>
+          </tr>
+          <tr>
+              <td><button class='textbutton' type='roll' value='?{Choose a Stat|
+   BRN,/roll 2d6 + @{BrawnMod}+@{SkillHeavyWeaponryMod}|
+   end,/roll 2d6 + @{EnduranceSecondaryMod}+@{SkillHeavyWeaponryMod}}' name='roll_SkillHeavyWeaponryCheck'>Heavy weaponry</button></td>
+              <td><input type='checkbox' name='attr_SkillHeavyWeaponryProf' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillHeavyWeaponryAdv' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillHeavyWeaponryExp' value='1' /></td>
+              <td><input type="number" name="attr_SkillHeavyWeaponryWounds" value="0"/></td>
+              <td><input type="number" name="attr_SkillHeavyWeaponryMod" value="@{SkillHeavyWeaponryProf}+@{SkillHeavyWeaponryAdv}+@{SkillHeavyWeaponryExp}-@{SkillHeavyWeaponryWounds}" disabled="true" /></td>
+          </tr>
+          <tr>
+              <td><button class='textbutton' type='roll' value='?{Choose a Stat|
+   AGI,/roll 2d6 + @{AgilityMod}+@{SkillUsingExplosivesMod}|
+   smr,/roll 2d6 + @{SmartsSecondaryMod}+@{SkillUsingExplosivesMod}}' name='roll_SkillUsingExplosivesCheck'>Using explosives</button></td>
+              <td><input type='checkbox' name='attr_SkillUsingExplosivesProf' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillUsingExplosivesAdv' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillUsingExplosivesExp' value='1' /></td>
+              <td><input type="number" name="attr_SkillUsingExplosivesWounds" value="0"/></td>
+              <td><input type="number" name="attr_SkillUsingExplosivesMod" value="@{SkillUsingExplosivesProf}+@{SkillUsingExplosivesAdv}+@{SkillUsingExplosivesExp}-@{SkillUsingExplosivesWounds}" disabled="true" /></td>
+          </tr>
+          <tr>
+              <td><button class='textbutton' type='roll' value='?{Choose a Stat|
+   BRN,/roll 2d6 + @{BrawnMod}+@{SkillAthleticsMod}|
+   AGI,/roll 2d6 + @{AgilityMod}+@{SkillAthleticsMod}|
+   end,/roll 2d6 + @{EnduranceSecondaryMod}+@{SkillAthleticsMod}}' name='roll_SkillAthleticsCheck'>Athletics</button></td>
+              <td><input type='checkbox' name='attr_SkillAthleticsProf' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillAthleticsAdv' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillAthleticsExp' value='1' /></td>
+              <td><input type="number" name="attr_SkillAthleticsWounds" value="0"/></td>
+              <td><input type="number" name="attr_SkillAthleticsMod" value="@{SkillAthleticsProf}+@{SkillAthleticsAdv}+@{SkillAthleticsExp}-@{SkillAthleticsWounds}" disabled="true" /></td>
+          </tr>
+          <tr>
+              <td><button class='textbutton' type='roll' value='?{Choose a Stat|
+   AGI,/roll 2d6 + @{AgilityMod}+@{SkillSneakingMod}|
+   per,/roll 2d6 + @{PerceptionSecondaryMod}+@{SkillSneakingMod}}' name='roll_SkillSneakingCheck'>Sneaking</button></td>
+              <td><input type='checkbox' name='attr_SkillSneakingProf' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillSneakingAdv' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillSneakingExp' value='1' /></td>
+              <td><input type="number" name="attr_SkillSneakingWounds" value="0"/></td>
+              <td><input type="number" name="attr_SkillSneakingMod" value="@{SkillSneakingProf}+@{SkillSneakingAdv}+@{SkillSneakingExp}-@{SkillSneakingWounds}" disabled="true" /></td>
+          </tr>
+          <tr>
+              <td><button class='textbutton' type='roll' value='?{Choose a Stat|
+   PER,/roll 2d6 + @{PerceptionMod}+@{SkillPathfindingMod}|
+   agi,/roll 2d6 + @{AgilitySecondaryMod}+@{SkillPathfindingMod}}' name='roll_SkillPathfindingCheck'>Pathfinding</button></td>
+              <td><input type='checkbox' name='attr_SkillPathfindingProf' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillPathfindingAdv' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillPathfindingExp' value='1' /></td>
+              <td><input type="number" name="attr_SkillPathfindingWounds" value="0"/></td>
+              <td><input type="number" name="attr_SkillPathfindingMod" value="@{SkillPathfindingProf}+@{SkillPathfindingAdv}+@{SkillPathfindingExp}-@{SkillPathfindingWounds}" disabled="true" /></td>
+          </tr>
+          <tr>
+              <td><button class='textbutton' type='roll' value='?{Choose a Stat|
+   AGI,/roll 2d6 + @{AgilityMod}+@{SkillDrivingMod}|
+   per,/roll 2d6 + @{PerceptionSecondaryMod}+@{SkillDrivingMod}}' name='roll_SkillDrivingCheck'>Driving</button></td>
+              <td><input type='checkbox' name='attr_SkillDrivingProf' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillDrivingAdv' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillDrivingExp' value='1' /></td>
+              <td><input type="number" name="attr_SkillDrivingWounds" value="0"/></td>
+              <td><input type="number" name="attr_SkillDrivingMod" value="@{SkillDrivingProf}+@{SkillDrivingAdv}+@{SkillDrivingExp}-@{SkillDrivingWounds}" disabled="true" /></td>
+          </tr>
+          <tr>
+              <td><button class='textbutton' type='roll' value='?{Choose a Stat|
+   PER,/roll 2d6 + @{PerceptionMod}+@{SkillLockpickingMod}|
+   agi,/roll 2d6 + @{AgilitySecondaryMod}+@{SkillLockpickingMod}}' name='roll_SkillLockpickingCheck'>Lockpicking</button></td>
+              <td><input type='checkbox' name='attr_SkillLockpickingProf' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillLockpickingAdv' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillLockpickingExp' value='1' /></td>
+              <td><input type="number" name="attr_SkillLockpickingWounds" value="0"/></td>
+              <td><input type="number" name="attr_SkillLockpickingMod" value="@{SkillLockpickingProf}+@{SkillLockpickingAdv}+@{SkillLockpickingExp}-@{SkillLockpickingWounds}" disabled="true" /></td>
+          </tr>
+          <tr>
+              <td><button class='textbutton' type='roll' value='?{Choose a Stat|
+   AGI,/roll 2d6 + @{AgilityMod}+@{SkillStealingMod}|
+   per,/roll 2d6 + @{PerceptionSecondaryMod}+@{SkillStealingMod}}' name='roll_SkillStealingCheck'>Close combat</button></td>
+              <td><input type='checkbox' name='attr_SkillStealingProf' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillStealingAdv' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillStealingExp' value='1' /></td>
+              <td><input type="number" name="attr_SkillStealingWounds" value="0"/></td>
+              <td><input type="number" name="attr_SkillStealingMod" value="@{SkillStealingProf}+@{SkillStealingAdv}+@{SkillStealingExp}-@{SkillStealingWounds}" disabled="true" /></td>
+          </tr>
+          <tr>
+              <td><button class='textbutton' type='roll' value='?{Choose a Stat|
+   BRN,/roll 2d6 + @{BrawnMod}+@{SkillScavengingMod}|
+   smr,/roll 2d6 + @{SmartsSecondaryMod}+@{SkillScavengingMod}|
+   end,/roll 2d6 + @{EnduranceSecondaryMod}+@{SkillScavengingMod}}' name='roll_SkillScavengingCheck'>Scavenging</button></td>
+              <td><input type='checkbox' name='attr_SkillScavengingProf' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillScavengingAdv' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillScavengingExp' value='1' /></td>
+              <td><input type="number" name="attr_SkillScavengingWounds" value="0"/></td>
+              <td><input type="number" name="attr_SkillScavengingMod" value="@{SkillScavengingProf}+@{SkillScavengingAdv}+@{SkillScavengingExp}-@{SkillScavengingWounds}" disabled="true" /></td>
+          </tr>
+          <tr>
+              <td><button class='textbutton' type='roll' value='?{Choose a Stat|
+   SMR,/roll 2d6 + @{SmartsMod}+@{SkillChemistryMod}}' name='roll_SkillChemistryCheck'>Chemistry</button></td>
+              <td><input type='checkbox' name='attr_SkillChemistryProf' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillChemistryAdv' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillChemistryExp' value='1' /></td>
+              <td><input type="number" name="attr_SkillChemistryWounds" value="0"/></td>
+              <td><input type="number" name="attr_SkillChemistryMod" value="@{SkillChemistryProf}+@{SkillChemistryAdv}+@{SkillChemistryExp}-@{SkillChemistryWounds}" disabled="true" /></td>
+          </tr>
+          <tr>
+              <td><button class='textbutton' type='roll' value='?{Choose a Stat|
+   SMR,/roll 2d6 + @{SmartsMod}+@{SkillElectronicsMod}}' name='roll_SkillElectronicsCheck'>Electronics</button></td>
+              <td><input type='checkbox' name='attr_SkillElectronicsProf' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillElectronicsAdv' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillElectronicsExp' value='1' /></td>
+              <td><input type="number" name="attr_SkillElectronicsWounds" value="0"/></td>
+              <td><input type="number" name="attr_SkillElectronicsMod" value="@{SkillElectronicsProf}+@{SkillElectronicsAdv}+@{SkillElectronicsExp}-@{SkillElectronicsWounds}" disabled="true" /></td>
+          </tr>
+          <tr>
+              <td><button class='textbutton' type='roll' value='?{Choose a Stat|
+   SMR,/roll 2d6 + @{SmartsMod}+@{SkillMechanicsMod}|
+   brn,/roll 2d6 + @{BrawnSecondaryMod}+@{SkillMechanicsMod}}' name='roll_SkillMechanicsCheck'>Mechanics</button></td>
+              <td><input type='checkbox' name='attr_SkillMechanicsProf' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillMechanicsAdv' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillMechanicsExp' value='1' /></td>
+              <td><input type="number" name="attr_SkillMechanicsWounds" value="0"/></td>
+              <td><input type="number" name="attr_SkillMechanicsMod" value="@{SkillMechanicsProf}+@{SkillMechanicsAdv}+@{SkillMechanicsExp}-@{SkillMechanicsWounds}" disabled="true" /></td>
+          </tr>
+          <tr>
+              <td><button class='textbutton' type='roll' value='?{Choose a Stat|
+   SMR,/roll 2d6 + @{SmartsMod}+@{SkillTreatingWoundsMod}|
+   per,/roll 2d6 + @{PerceptionSecondaryMod}+@{SkillTreatingWoundsMod}}' name='roll_SkillTreatingWoundsCheck'>Treating wounds</button></td>
+              <td><input type='checkbox' name='attr_SkillTreatingWoundsProf' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillTreatingWoundsAdv' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillTreatingWoundsExp' value='1' /></td>
+              <td><input type="number" name="attr_SkillTreatingWoundsWounds" value="0"/></td>
+              <td><input type="number" name="attr_SkillTreatingWoundsMod" value="@{SkillTreatingWoundsProf}+@{SkillTreatingWoundsAdv}+@{SkillTreatingWoundsExp}-@{SkillTreatingWoundsWounds}" disabled="true" /></td>
+          </tr>
+          <tr>
+              <td><button class='textbutton' type='roll' value='?{Choose a Stat|
+   CHA,/roll 2d6 + @{CharismaMod}+@{SkillIntimidationMod}|
+   brn,/roll 2d6 + @{BrawnSecondaryMod}+@{SkillIntimidationMod}}' name='roll_SkillIntimidationCheck'>Intimidation</button></td>
+              <td><input type='checkbox' name='attr_SkillIntimidationProf' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillIntimidationAdv' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillIntimidationExp' value='1' /></td>
+              <td><input type="number" name="attr_SkillIntimidationWounds" value="0"/></td>
+              <td><input type="number" name="attr_SkillIntimidationMod" value="@{SkillIntimidationProf}+@{SkillIntimidationAdv}+@{SkillIntimidationExp}-@{SkillIntimidationWounds}" disabled="true" /></td>
+          </tr>
+          <tr>
+              <td><button class='textbutton' type='roll' value='?{Choose a Stat|
+   CHA,/roll 2d6 + @{CharismaMod}+@{SkillBluffingMod}|
+   agi,/roll 2d6 + @{AgilitySecondaryMod}+@{SkillBluffingMod}}' name='roll_SkillBluffingCheck'>Bluffing</button></td>
+              <td><input type='checkbox' name='attr_SkillBluffingProf' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillBluffingAdv' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillBluffingExp' value='1' /></td>
+              <td><input type="number" name="attr_SkillBluffingWounds" value="0"/></td>
+              <td><input type="number" name="attr_SkillBluffingMod" value="@{SkillBluffingProf}+@{SkillBluffingAdv}+@{SkillBluffingExp}-@{SkillBluffingWounds}" disabled="true" /></td>
+          </tr>
+          <tr>
+              <td><button class='textbutton' type='roll' value='?{Choose a Stat|
+   CHA,/roll 2d6 + @{CharismaMod}+@{SkillCharmingMod}|
+   per,/roll 2d6 + @{PerceptionSecondaryMod}+@{SkillCharmingMod}}' name='roll_SkillCharmingCheck'>Charming</button></td>
+              <td><input type='checkbox' name='attr_SkillCharmingProf' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillCharmingAdv' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillCharmingExp' value='1' /></td>
+              <td><input type="number" name="attr_SkillCharmingWounds" value="0"/></td>
+              <td><input type="number" name="attr_SkillCharmingMod" value="@{SkillCharmingProf}+@{SkillCharmingAdv}+@{SkillCharmingExp}-@{SkillCharmingWounds}" disabled="true" /></td>
+          </tr>
+          <tr>
+              <td><button class='textbutton' type='roll' value='?{Choose a Stat|
+   CHA,/roll 2d6 + @{CharismaMod}+@{SkillTradingMod}|
+   smr,/roll 2d6 + @{SmartsSecondaryMod}+@{SkillTradingMod}}' name='roll_SkillTradingCheck'>Trading</button></td>
+              <td><input type='checkbox' name='attr_SkillTradingProf' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillTradingAdv' value='1' /></td>
+              <td><input type='checkbox' name='attr_SkillTradingExp' value='1' /></td>
+              <td><input type="number" name="attr_SkillTradingWounds" value="0"/></td>
+              <td><input type="number" name="attr_SkillTradingMod" value="@{SkillTradingProf}+@{SkillTradingAdv}+@{SkillTradingExp}-@{SkillTradingWounds}" disabled="true" /></td>
+          </tr>
+      </table>
+    </div>
+    <div class="bonds section">
+      <label>Bonds</label>
+      <textarea name="attr_bonds"></textarea>
+    </div> 
+    <div class="wounds section">
+      <label>Wounds</label>
+      <textarea name="attr_inventory"></textarea>
+    </div>
+    <div class="inv section">
+      <label>Inventory</label>
+      <textarea name="attr_inventory"></textarea>
+    </div>
+</div>
+
+<script type="text/worker">
+
+on("change:trade", function() {
+    SetTradeDescription();
+});
+
+on("change:temper", function() {
+    SetTemperDescription();
+});
+
+on("change:Brawn change:Agility change:Endurance change:Perception change:Smarts change:Charisma", function(eventInfo) {
+	CalcSecondaryModifiers();
+});
+
+on('sheet:opened',function(){
+    SetTradeDescription();
+    SetTemperDescription();
+	CalcSecondaryModifiers();
+});
+
+function CalcSecondaryModifiers(){
+	getAttrs(["Brawn","Agility","Endurance","Perception","Smarts","Charisma"], function(values){
+		var mods = { 
+			BrawnSecondaryMod: 0,
+			AgilitySecondaryMod: 0 ,
+			EnduranceSecondaryMod: 0 ,
+			PerceptionSecondaryMod: 0 ,
+			SmartsSecondaryMod: 0 ,
+			CharismaSecondaryMod: 0 
+		};
+		
+		if(values.Brawn > 0){
+			mods.BrawnSecondaryMod = Math.floor(values.Brawn / 3) + 1;
+		} else {
+			mods.BrawnSecondaryMod = values.Brawn;
+		}
+		
+		if(values.Agility > 0){
+			mods.AgilitySecondaryMod = Math.floor(values.Agility / 3) + 1;
+		} else {
+			mods.AgilitySecondaryMod = values.Agility;
+		}
+		
+		if(values.Endurance > 0){
+			mods.EnduranceSecondaryMod = Math.floor(values.Endurance / 3) + 1;
+		} else {
+			mods.EnduranceSecondaryMod = values.Endurance;
+		}
+		
+		if(values.Perception > 0){
+			mods.PerceptionSecondaryMod = Math.floor(values.Perception / 3) + 1;
+		} else {
+			mods.PerceptionSecondaryMod = values.Perception;
+		}
+		
+		if(values.Smarts > 0){
+			mods.SmartsSecondaryMod = Math.floor(values.Smarts / 3) + 1;
+		} else {
+			mods.SmartsSecondaryMod = values.Smarts;
+		}
+		
+		if(values.Charisma > 0){
+			mods.CharismaSecondaryMod = Math.floor(values.Charisma / 3) + 1;
+		} else {
+			mods.CharismaSecondaryMod = values.Charisma;
+		}
+		
+		setAttrs(mods);
+	});
+}
+
+function SetTradeDescription(){
+    getAttrs(["trade"], function(values) {
+      if (values.trade == 'Driver'){
+          setAttrs({ tradedesc: 'Avoid peril on four wheels' });
+      } else if (values.trade == 'Tinker'){
+          setAttrs({ tradedesc: 'Repair or maintain something knackered' });
+      }  else if (values.trade == 'Scout'){
+          setAttrs({ tradedesc: 'Lead others safely onwards' });
+      }  else if (values.trade == 'Gunner'){
+          setAttrs({ tradedesc: 'Carve open a path of blood' });
+      }  else if (values.trade == 'Scientist'){
+          setAttrs({ tradedesc: 'Open up new possibilities through the miracle of science' });
+      }  else if (values.trade == 'Medic'){
+          setAttrs({ tradedesc: 'Selflessly heal someone else' });
+      }  else if (values.trade == 'Spokesman'){
+          setAttrs({ tradedesc: 'Win over the hearts of others' });
+      } 
+   });
+}
+
+function SetTemperDescription(){
+    getAttrs(["temper"], function(values) {
+      if (values.temper == 'Hot-headed'){
+          setAttrs({ temperdesc: 'Act brashly and without second thought when tempted' });
+      } else if (values.temper == 'Cautious'){
+          setAttrs({ temperdesc: 'Avoid confrontation when survival or victory is uncertain' });
+      }  else if (values.temper == 'Straight-shooting'){
+          setAttrs({ temperdesc: 'Tell the things as they are and carry yourself with confidence' });
+      }  else if (values.temper == 'Twisted'){
+          setAttrs({ temperdesc: 'Deviate from social norms, by doing something unacceptable' });
+      }  else if (values.temper == 'Level-headed'){
+          setAttrs({ temperdesc: 'Remain calm, collected and steadfast under pressure' });
+      }
+   });
+}
+
+</script>
