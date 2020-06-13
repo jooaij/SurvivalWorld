@@ -1,0 +1,783 @@
+<div class="main">
+    <input class="attr_character_name" name="attr_character_name" type="text"/>
+    <input class="attr_level" name="attr_level" type="number" />
+    <input class="attr_experience" name="attr_experience" type="number" />
+    <select class="attr_trade longbox" name="attr_trade">
+        <options>
+            <option>Driver</option>
+            <option>Tinker</option>
+            <option>Scout</option>
+            <option>Gunner</option>
+            <option>Scientist</option>
+            <option>Medic</option>
+            <option>Spokesman</option>
+        </options>
+    </select>
+    <span class='attr_tradedesc' name='attr_tradedesc'></span>
+    <select class="attr_temper longbox" name="attr_temper">
+        <options>
+            <option>Hot-headed</option>
+            <option>Cautious</option>
+            <option>Straight-shooting</option>
+            <option>Twisted</option>
+            <option>Level-headed</option>
+        </options>
+    </select>
+    <span class='attr_temperdesc' name='attr_temperdesc'></span>
+    
+      <button type='roll' value='&{template:survival} {{rollname=Brawn Check}} {{stat=Brawn}} {{roll=[[2d6 + @{BrawnMod}]]}}' class='statbtn brawnbtn' name='roll_BrawnCheck'></button>
+      <input type="number" name="attr_Brawn" class="numbox attr_Brawn" value="0"/>
+      <input type="number" name="attr_BrawnWounds" class="Hidden attr_BrawnWounds" value="0"/>
+      <input type="number" name="attr_BrawnMod" class="Hidden" value="0" disabled="true" />
+      <input type="number" name="attr_BrawnWounds_Vis" class="numbox attr_BrawnWounds" value="@{BrawnWounds}" disabled="true"/>
+      <input type="number" name="attr_BrawnMod_Vis" class="Hidden" value="@{BrawnMod}" disabled="true" />
+      <input type="number" name="attr_BrawnSecondaryMod" class="Hidden" />
+	  <input type="number" name="attr_BrawnSecondaryMod_Vis" class="Hidden" value="@{BrawnSecondaryMod}" disabled="true" />
+	  
+      <button type='roll' value='&{template:survival} {{rollname=Agility Check}} {{stat=Agility}} {{roll=[[2d6 + @{AgilityMod}]]}}' class='statbtn agilitybtn' name='roll_AgilityCheck'></button>
+      <input type="number" name="attr_Agility" class="numbox attr_Agility" value="0"/>
+      <input type="number" name="attr_AgilityWounds" class="Hidden attr_AgilityWounds" value="0"/>
+      <input type="number" name="attr_AgilityMod" class="Hidden" value="0" disabled="true" />
+      <input type="number" name="attr_AgilityWounds_Vis" class="numbox attr_AgilityWounds" value="@{AgilityWounds}" disabled="true"/>
+      <input type="number" name="attr_AgilityMod_Vis" class="Hidden" value="@{AgilityMod}" disabled="true" />
+      <input type="number" name="attr_AgilitySecondaryMod" class="Hidden" />
+	  <input type="number" name="attr_AgilitySecondaryMod_Vis" class="Hidden" value="@{AgilitySecondaryMod}" disabled="true" />
+	  
+      <button type='roll' value='&{template:survival} {{rollname=Endurance Check}} {{stat=Endurance}} {{roll=[[2d6 + @{EnduranceMod}]]}}' class='statbtn endurancebtn' name='roll_EnduranceCheck'></button>
+      <input type="number" name="attr_Endurance" class="numbox attr_Endurance" value="0"/>
+      <input type="number" name="attr_EnduranceWounds" class="Hidden attr_EnduranceWounds" value="0"/>
+      <input type="number" name="attr_EnduranceMod" class="Hidden" value="0" disabled="true" />
+      <input type="number" name="attr_EnduranceWounds_Vis" class="numbox attr_EnduranceWounds" value="@{EnduranceWounds}" disabled="true"/>
+      <input type="number" name="attr_EnduranceMod_Vis" class="Hidden" value="@{EnduranceMod}" disabled="true" />
+      <input type="number" name="attr_EnduranceSecondaryMod" class="Hidden" />
+	  <input type="number" name="attr_EnduranceSecondaryMod_Vis" class="Hidden" value="@{EnduranceSecondaryMod}" disabled="true" />
+	  
+      <button type='roll' value='&{template:survival} {{rollname=Perception Check}} {{stat=Perception}} {{roll=[[2d6 + @{PerceptionMod}]]}}' class='statbtn perceptionbtn' name='roll_PerceptionCheck'></button>
+      <input type="number" name="attr_Perception" class="numbox attr_Perception" value="0"/>
+      <input type="number" name="attr_PerceptionWounds" class="Hidden attr_PerceptionWounds" value="0"/>
+      <input type="number" name="attr_PerceptionMod" class="Hidden" value="0" disabled="true" />
+      <input type="number" name="attr_PerceptionWounds_Vis" class="numbox attr_PerceptionWounds" value="@{PerceptionWounds}" disabled="true"/>
+      <input type="number" name="attr_PerceptionMod_Vis" class="Hidden" value="@{PerceptionMod}" disabled="true" />
+      <input type="number" name="attr_PerceptionSecondaryMod" class="Hidden" />
+	  <input type="number" name="attr_PerceptionSecondaryMod_Vis" class="Hidden" value="@{PerceptionSecondaryMod}" disabled="true" />
+	  
+      <button type='roll' value='&{template:survival} {{rollname=Smarts Check}} {{stat=Smarts}} {{roll=[[2d6 + @{SmartsMod}]]}}' class='statbtn smartsbtn' name='roll_SmartsCheck'></button>
+      <input type="number" name="attr_Smarts" class="numbox attr_Smarts" value="0"/>
+      <input type="number" name="attr_SmartsWounds" class="Hidden attr_SmartsWounds" value="0"/>
+      <input type="number" name="attr_SmartsMod" class="Hidden" value="0" disabled="true" />
+      <input type="number" name="attr_SmartsWounds_Vis" class="numbox attr_SmartsWounds" value="@{SmartsWounds}" disabled="true"/>
+      <input type="number" name="attr_SmartsMod_Vis" class="Hidden" value="@{SmartsMod}" disabled="true" />
+      <input type="number" name="attr_SmartsSecondaryMod" class="Hidden"/>
+	  <input type="number" name="attr_SmartsSecondaryMod_Vis" class="Hidden" value="@{SmartsSecondaryMod}" disabled="true" />
+	  
+      <button type='roll' value='&{template:survival} {{rollname=Charisma Check}} {{stat=Charisma}} {{roll=[[2d6 + @{CharismaMod}]]}}' class='statbtn charismabtn' name='roll_CharismaCheck'></button>
+      <input type="number" name="attr_Charisma" class="numbox attr_Charisma" value="0"/>
+      <input type="number" name="attr_CharismaWounds" class="Hidden attr_CharismaWounds" value="0"/>
+      <input type="number" name="attr_CharismaMod" class="Hidden" value="0" disabled="true" />
+      <input type="number" name="attr_CharismaWounds_Vis" class="numbox attr_CharismaWounds" value="@{CharismaWounds}" disabled="true"/>
+      <input type="number" name="attr_CharismaMod_Vis" class="Hidden" value="@{CharismaMod}" disabled="true" />
+      <input type="number" name="attr_CharismaSecondaryMod" class="Hidden" />
+	  <input type="number" name="attr_CharismaSecondaryMod_Vis" class="Hidden" value="@{CharismaSecondaryMod}" disabled="true" />
+	  
+			<input type="hidden" name="attr_skill_closecombat_statquery" value="?{Stat|BRN,@{BrawnMod}[BRN]|agi, @{AgilitySecondaryMod}[agi]|AGI (precise), @{AgilityMod}[AGI (precise)]}">
+              <button class='textbutton btn_closecombat skill_closecombat' type='roll' value='&{template:survival} {{rollname=Close Combat Check}} {{roll=[[2d6 + @{skill_closecombat_statquery}+@{SkillCloseCombatMod}]]}}'></button>
+              <input type='checkbox' class='prof skill_closecombat' name='attr_SkillCloseCombatProf' value='1' />
+              <input type='checkbox' class='adv skill_closecombat' name='attr_SkillCloseCombatAdv' value='1' />
+              <input type='checkbox' class='exp skill_closecombat' name='attr_SkillCloseCombatExp' value='1' />
+              <input type="number" class='Hidden skill_closecombat' name="attr_SkillCloseCombatWounds" value="0"/>
+              <input type="number" class='Hidden skill_closecombat' name="attr_SkillCloseCombatMod" value="0" />
+              <input type="number" class='skillwnd skill_closecombat' name="attr_SkillCloseCombatWounds_Vis" value="@{SkillCloseCombatWounds}" disabled="true"/>
+              <input type="number" class='skillmod skill_closecombat' name="attr_SkillCloseCombatMod_Vis" value="@{SkillCloseCombatMod}" disabled="true" />
+
+
+			<input type="hidden" name="attr_skill_firearms_statquery" value="?{Stat|PER,@{PerceptionMod}[PER]|agi, @{AgilitySecondaryMod}[agi]|AGI (quickdraw), @{AgilityMod}[AGI (quickdraw)]}">
+              <button class='textbutton btn_firearms skill_firearms' type='roll' value='&{template:survival} {{rollname=Shooting Firearms Check}} {{roll=[[2d6 + @{skill_firearms_statquery}+@{SkillShootingFirearmsMod}[SKILL]]]}}' name='roll_SkillShootingFirearmsCheck'></button>
+              <input type='checkbox' class='prof skill_firearms'  name='attr_SkillShootingFirearmsProf' value='1' />
+              <input type='checkbox' class='adv skill_firearms' name='attr_SkillShootingFirearmsAdv' value='1' />
+              <input type='checkbox' class='exp skill_firearms' name='attr_SkillShootingFirearmsExp' value='1' />
+              <input type="number" class='Hidden skill_firearms' name="attr_SkillShootingFirearmsWounds" value="0"/>
+              <input type="number" class='Hidden skill_firearms' name="attr_SkillShootingFirearmsMod" value="0" />
+              <input type="number" class='skillwnd skill_firearms' name="attr_SkillShootingFirearmsWounds_Vis" value="@{SkillShootingFirearmsWounds}" disabled="true"/>
+              <input type="number" class='skillmod skill_firearms' name="attr_SkillShootingFirearmsMod_Vis" value="@{SkillShootingFirearmsMod}" disabled="true" />
+
+
+              <button class='textbutton btn_sharpshooting skill_sharpshooting' type='roll' value='&{template:survival} {{rollname=Sharpshooting Check}} {{roll=[[2d6 + @{PerceptionMod}[PER]+@{SkillSharpshootingMod}[SKILL]]]}}' name='roll_SkillSharpshootingCheck'></button>
+              <input type='checkbox' class='prof skill_sharpshooting'  name='attr_SkillSharpshootingProf' value='1' />
+              <input type='checkbox' class='adv skill_sharpshooting' name='attr_SkillSharpshootingAdv' value='1' />
+              <input type='checkbox' class='exp skill_sharpshooting' name='attr_SkillSharpshootingExp' value='1' />
+              <input type="number" class='Hidden skill_sharpshooting' name="attr_SkillSharpshootingWounds" value="0"/>
+              <input type="number" class='Hidden skill_sharpshooting' name="attr_SkillSharpshootingMod" value="0" />
+              <input type="number" class='skillwnd skill_sharpshooting' name="attr_SkillSharpshootingWounds_Vis" value="@{SkillSharpshootingWounds}" disabled="true"/>
+              <input type="number" class='skillmod skill_sharpshooting' name="attr_SkillSharpshootingMod_Vis" value="@{SkillSharpshootingMod}" disabled="true" />
+
+
+			<input type="hidden" name="attr_skill_heavyweaponry_statquery" value="?{Stat|BRN,@{BrawnMod}[BRN]|end, @{EnduranceSecondaryMod}[end]|per (scoped), @{PerceptionSecondaryMod}[per (scoped)]}">
+			<input type="hidden" name="attr_skill_heavyweaponry_mountedquery" value="?{Is the weapon Mounted or a Support weapon|Yes,0[Mounted or a Support weapons]|No, -1[Not mounted or not a support weapon]}">
+              <button class='textbutton btn_heavyweaponry skill_heavyweaponry' type='roll' value='&{template:survival} {{rollname=Heavy Weaponry Check}} {{roll=[[2d6 + @{skill_heavyweaponry_statquery} + @{skill_heavyweaponry_mountedquery}+@{SkillHeavyWeaponryMod}[SKILL]]]}}' name='roll_SkillHeavyWeaponryCheck'></button>
+              <input type='checkbox' class='prof skill_heavyweaponry'  name='attr_SkillHeavyWeaponryProf' value='1' />
+              <input type='checkbox' class='adv skill_heavyweaponry' name='attr_SkillHeavyWeaponryAdv' value='1' />
+              <input type='checkbox' class='exp skill_heavyweaponry' name='attr_SkillHeavyWeaponryExp' value='1' />
+              <input type="number" class='Hidden skill_heavyweaponry' name="attr_SkillHeavyWeaponryWounds" value="0"/>
+              <input type="number" class='Hidden skill_heavyweaponry' name="attr_SkillHeavyWeaponryMod" value="0" />
+              <input type="number" class='skillwnd skill_heavyweaponry' name="attr_SkillHeavyWeaponryWounds_Vis" value="@{SkillHeavyWeaponryWounds}" disabled="true"/>
+              <input type="number" class='skillmod skill_heavyweaponry' name="attr_SkillHeavyWeaponryMod_Vis" value="@{SkillHeavyWeaponryMod}" disabled="true" />
+
+
+			<input type="hidden" name="attr_skill_explosives_statquery" value="?{Stat|AGI,@{AgilityMod}[AGI]|smr, @{SmartsSecondaryMod}[smr]}">
+              <button class='textbutton btn_explosives skill_explosives' type='roll' value='&{template:survival} {{rollname=Using Explosives Check}} {{roll=[[2d6 + @{skill_explosives_statquery}+@{SkillUsingExplosivesMod}[SKILL]]]}}' name='roll_SkillUsingExplosivesCheck'></button>
+              <input type='checkbox' class='prof skill_explosives'  name='attr_SkillUsingExplosivesProf' value='1' />
+              <input type='checkbox' class='adv skill_explosives' name='attr_SkillUsingExplosivesAdv' value='1' />
+              <input type='checkbox' class='exp skill_explosives' name='attr_SkillUsingExplosivesExp' value='1' />
+              <input type="number" class='Hidden skill_explosives' name="attr_SkillUsingExplosivesWounds" value="0"/>
+              <input type="number" class='Hidden skill_explosives' name="attr_SkillUsingExplosivesMod" value="0" />
+              <input type="number" class='skillwnd skill_explosives' name="attr_SkillUsingExplosivesWounds_Vis" value="@{SkillUsingExplosivesWounds}" disabled="true"/>
+              <input type="number" class='skillmod skill_explosives' name="attr_SkillUsingExplosivesMod_Vis" value="@{SkillUsingExplosivesMod}" disabled="true" />
+
+
+			<input type="hidden" name="attr_skill_athletics_statquery" value="?{Stat|BRN,@{BrawnMod}[BRN]|AGI, @{AgilityMod}[AGI]|end, @{EnduranceSecondaryMod}[end]}">
+              <button class='textbutton btn_athletics skill_athletics' type='roll' value='&{template:survival} {{rollname=Athletics Check}} {{roll=[[2d6 + @{skill_athletics_statquery}+@{SkillAthleticsMod}[SKILL]]]}}' name='roll_SkillAthleticsCheck'></button>
+              <input type='checkbox' class='prof skill_athletics'  name='attr_SkillAthleticsProf' value='1' />
+              <input type='checkbox' class='adv skill_athletics' name='attr_SkillAthleticsAdv' value='1' />
+              <input type='checkbox' class='exp skill_athletics' name='attr_SkillAthleticsExp' value='1' />
+              <input type="number" class='Hidden skill_athletics' name="attr_SkillAthleticsWounds" value="0"/>
+              <input type="number" class='Hidden skill_athletics' name="attr_SkillAthleticsMod" value="0"  />
+              <input type="number" class='skillwnd skill_athletics' name="attr_SkillAthleticsWounds_Vis" value="@{SkillAthleticsWounds}" disabled="true"/>
+              <input type="number" class='skillmod skill_athletics' name="attr_SkillAthleticsMod_Vis" value="@{SkillAthleticsMod}" disabled="true" />
+
+
+			<input type="hidden" name="attr_skill_sneaking_statquery" value="?{Stat|AGI,@{AgilityMod}[AGI]|per, @{PerceptionSecondaryMod}[per]}">
+              <button class='textbutton btn_sneaking skill_sneaking' type='roll' value='&{template:survival} {{rollname=Sneaking Check}} {{roll=[[2d6 + @{skill_sneaking_statquery}+@{SkillSneakingMod}[SKILL]]]}}' name='roll_SkillSneakingCheck'></button>
+              <input type='checkbox' class='prof skill_sneaking'  name='attr_SkillSneakingProf' value='1' />
+              <input type='checkbox' class='adv skill_sneaking' name='attr_SkillSneakingAdv' value='1' />
+              <input type='checkbox' class='exp skill_sneaking' name='attr_SkillSneakingExp' value='1' />
+              <input type="number" class='Hidden skill_sneaking' name="attr_SkillSneakingWounds" value="0"/>
+              <input type="number" class='Hidden skill_sneaking' name="attr_SkillSneakingMod" value="0" />
+              <input type="number" class='skillwnd skill_sneaking' name="attr_SkillSneakingWounds_Vis" value="@{SkillSneakingWounds}" disabled="true"/>
+              <input type="number" class='skillmod skill_sneaking' name="attr_SkillSneakingMod_Vis" value="@{SkillSneakingMod}" disabled="true" />
+
+
+			<input type="hidden" name="attr_skill_pathfinding_statquery" value="?{Stat|PER,@{PerceptionMod}[PER]|agi, @{AgilitySecondaryMod}[agi]}">
+              <button class='textbutton btn_pathfinding skill_pathfinding' type='roll' value='&{template:survival} {{rollname=Pathfinding Check}} {{roll=[[2d6 + @{skill_pathfinding_statquery}+@{SkillPathfindingMod}[SKILL]]]}}' name='roll_SkillPathfindingCheck'></button>
+              <input type='checkbox' class='prof skill_pathfinding'  name='attr_SkillPathfindingProf' value='1' />
+              <input type='checkbox' class='adv skill_pathfinding' name='attr_SkillPathfindingAdv' value='1' />
+              <input type='checkbox' class='exp skill_pathfinding' name='attr_SkillPathfindingExp' value='1' />
+              <input type="number" class='Hidden skill_pathfinding' name="attr_SkillPathfindingWounds" value="0"/>
+              <input type="number" class='Hidden skill_pathfinding' name="attr_SkillPathfindingMod" value="0" />
+              <input type="number" class='skillwnd skill_pathfinding' name="attr_SkillPathfindingWounds_Vis" value="@{SkillPathfindingWounds}" disabled="true"/>
+              <input type="number" class='skillmod skill_pathfinding' name="attr_SkillPathfindingMod_Vis" value="@{SkillPathfindingMod}" disabled="true" />
+
+
+			<input type="hidden" name="attr_skill_driving_statquery" value="?{Stat|AGI,@{AgilityMod}[AGI]|per, @{PerceptionSecondaryMod}[per]}">
+              <button class='textbutton btn_driving skill_driving' type='roll' value='&{template:survival} {{rollname=Driving Check}} {{roll=[[2d6 + @{skill_driving_statquery}+@{SkillDrivingMod}[SKILL]]]}}' name='roll_SkillDrivingCheck'></button>
+              <input type='checkbox' class='prof skill_driving'  name='attr_SkillDrivingProf' value='1' />
+              <input type='checkbox' class='adv skill_driving' name='attr_SkillDrivingAdv' value='1' />
+              <input type='checkbox' class='exp skill_driving' name='attr_SkillDrivingExp' value='1' />
+              <input type="number" class='Hidden skill_driving' name="attr_SkillDrivingWounds" value="0"/>
+              <input type="number" class='Hidden skill_driving' name="attr_SkillDrivingMod" value="0" />
+              <input type="number" class='skillwnd skill_driving' name="attr_SkillDrivingWounds_Vis" value="@{SkillDrivingWounds}" disabled="true"/>
+              <input type="number" class='skillmod skill_driving' name="attr_SkillDrivingMod_Vis" value="@{SkillDrivingMod}" disabled="true" />
+
+
+			<input type="hidden" name="attr_skill_lockpicking_statquery" value="?{Stat|PER,@{PerceptionMod}[PER]|agi, @{AgilitySecondaryMod}[agi]}">
+              <button class='textbutton btn_lockpicking skill_lockpicking' type='roll' value='&{template:survival} {{rollname=Lockpicking Check}} {{roll=[[2d6 + @{skill_lockpicking_statquery}+@{SkillLockpickingMod}[SKILL]]]}}' name='roll_SkillLockpickingCheck'></button>
+              <input type='checkbox' class='prof skill_lockpicking'  name='attr_SkillLockpickingProf' value='1' />
+              <input type='checkbox' class='adv skill_lockpicking' name='attr_SkillLockpickingAdv' value='1' />
+              <input type='checkbox' class='exp skill_lockpicking' name='attr_SkillLockpickingExp' value='1' />
+              <input type="number" class='Hidden skill_lockpicking' name="attr_SkillLockpickingWounds" value="0"/>
+              <input type="number" class='Hidden skill_lockpicking' name="attr_SkillLockpickingMod" value="0" />
+              <input type="number" class='skillwnd skill_lockpicking' name="attr_SkillLockpickingWounds_Vis" value="@{SkillLockpickingWounds}" disabled="true"/>
+              <input type="number" class='skillmod skill_lockpicking' name="attr_SkillLockpickingMod_Vis" value="@{SkillLockpickingMod}" disabled="true" />
+
+
+			<input type="hidden" name="attr_skill_stealing_statquery" value="?{Stat|AGI,@{AgilityMod}[AGI]|per, @{PerceptionSecondaryMod}[per]}">
+              <button class='textbutton btn_stealing skill_stealing' type='roll' value='&{template:survival} {{rollname=Stealing Check}} {{roll=[[2d6 + @{skill_stealing_statquery}+@{SkillStealingMod}[SKILL]]]}}' name='roll_SkillStealingCheck'></button>
+              <input type='checkbox' class='prof skill_stealing'  name='attr_SkillStealingProf' value='1' />
+              <input type='checkbox' class='adv skill_stealing' name='attr_SkillStealingAdv' value='1' />
+              <input type='checkbox' class='exp skill_stealing' name='attr_SkillStealingExp' value='1' />
+              <input type="number" class='Hidden skill_stealing' name="attr_SkillStealingWounds" value="0"/>
+              <input type="number" class='Hidden skill_stealing' name="attr_SkillStealingMod" value="0"/>
+              <input type="number" class='skillwnd skill_stealing' name="attr_SkillStealingWounds_Vis" value="@{SkillStealingWounds}" disabled="true" />
+              <input type="number" class='skillmod skill_stealing' name="attr_SkillStealingMod_Vis" value="@{SkillStealingMod}" disabled="true" />
+
+
+			<input type="hidden" name="attr_skill_scavenging_statquery" value="?{Stat|BRN,@{BrawnMod}[BRN]|smr, @{SmartsSecondaryMod}[smr]|end, @{EnduranceSecondaryMod}[end]}">
+              <button class='textbutton btn_scavenging skill_scavenging' type='roll' value='&{template:survival} {{rollname=Scavenging Check}} {{roll=[[2d6 + @{skill_scavenging_statquery}+@{SkillScavengingMod}[SKILL]]]}}' name='roll_SkillScavengingCheck'></button>
+              <input type='checkbox' class='prof skill_scavenging'  name='attr_SkillScavengingProf' value='1' />
+              <input type='checkbox' class='adv skill_scavenging' name='attr_SkillScavengingAdv' value='1' />
+              <input type='checkbox' class='exp skill_scavenging' name='attr_SkillScavengingExp' value='1' />
+              <input type="number" class='Hidden skill_scavenging' name="attr_SkillScavengingWounds" value="0"/>
+              <input type="number" class='Hidden skill_scavenging' name="attr_SkillScavengingMod" value="0" />
+              <input type="number" class='skillwnd skill_scavenging' name="attr_SkillScavengingWounds_Vis" value="@{SkillScavengingWounds}" disabled="true"/>
+              <input type="number" class='skillmod skill_scavenging' name="attr_SkillScavengingMod_Vis" value="@{SkillScavengingMod}" disabled="true" />
+
+
+              <button class='textbutton btn_chemistry skill_chemistry' type='roll' value='&{template:survival} {{rollname=Chemistry Check}} {{roll=[[2d6 + @{SmartsMod}[SMR]+@{SkillChemistryMod}[SKILL]]]}}' name='roll_SkillChemistryCheck'></button>
+              <input type='checkbox' class='prof skill_chemistry'  name='attr_SkillChemistryProf' value='1' />
+              <input type='checkbox' class='adv skill_chemistry' name='attr_SkillChemistryAdv' value='1' />
+              <input type='checkbox' class='exp skill_chemistry' name='attr_SkillChemistryExp' value='1' />
+              <input type="number" class='Hidden skill_chemistry' name="attr_SkillChemistryWounds" value="0"/>
+              <input type="number" class='Hidden skill_chemistry' name="attr_SkillChemistryMod" value="0" />
+              <input type="number" class='skillwnd skill_chemistry' name="attr_SkillChemistryWounds_Vis" value="@{SkillChemistryWounds}" disabled="true"/>
+              <input type="number" class='skillmod skill_chemistry' name="attr_SkillChemistryMod_Vis" value="@{SkillChemistryMod}" disabled="true" />
+
+
+              <button class='textbutton btn_electronics skill_electronics' type='roll' value='&{template:survival} {{rollname=Electronics Check}} {{roll=[[2d6 + @{SmartsMod}[SMR]+@{SkillElectronicsMod}[SKILL]]]}}' name='roll_SkillElectronicsCheck'></button>
+              <input type='checkbox' class='prof skill_electronics'  name='attr_SkillElectronicsProf' value='1' />
+              <input type='checkbox' class='adv skill_electronics' name='attr_SkillElectronicsAdv' value='1' />
+              <input type='checkbox' class='exp skill_electronics' name='attr_SkillElectronicsExp' value='1' />
+              <input type="number" class='Hidden skill_electronics' name="attr_SkillElectronicsWounds" value="0"/>
+              <input type="number" class='Hidden skill_electronics' name="attr_SkillElectronicsMod" value="0"/>
+              <input type="number" class='skillwnd skill_electronics' name="attr_SkillElectronicsWounds_Vis" value="@{SkillElectronicsWounds}" disabled="true" />
+              <input type="number" class='skillmod skill_electronics' name="attr_SkillElectronicsMod_Vis" value="@{SkillElectronicsMod}" disabled="true" />
+
+
+			<input type="hidden" name="attr_skill_mechanics_statquery" value="?{Stat|SMR,@{SmartsMod}[SMR]|brn, @{BrawnSecondaryMod}[brn]}">
+              <button class='textbutton btn_mechanics skill_mechanics' type='roll' value='&{template:survival} {{rollname=Mechanics Check}} {{roll=[[2d6 + @{skill_mechanics_statquery}+@{SkillMechanicsMod}[SKILL]]]}}' name='roll_SkillMechanicsCheck'></button>
+              <input type='checkbox' class='prof skill_mechanics'  name='attr_SkillMechanicsProf' value='1' />
+              <input type='checkbox' class='adv skill_mechanics' name='attr_SkillMechanicsAdv' value='1' />
+              <input type='checkbox' class='exp skill_mechanics' name='attr_SkillMechanicsExp' value='1' />
+              <input type="number" class='Hidden skill_mechanics' name="attr_SkillMechanicsWounds" value="0"/>
+              <input type="number" class='Hidden skill_mechanics' name="attr_SkillMechanicsMod" value="0" />
+              <input type="number" class='skillwnd skill_mechanics' name="attr_SkillMechanicsWounds_Vis" value="@{SkillMechanicsWounds}" disabled="true"/>
+              <input type="number" class='skillmod skill_mechanics' name="attr_SkillMechanicsMod_Vis" value="@{SkillMechanicsMod}" disabled="true" />
+
+
+			<input type="hidden" name="attr_skill_treatingwounds_statquery" value="?{Stat|SMR,@{SmartsMod}[SMR]|per, @{PerceptionSecondaryMod}[per]}">
+              <button class='textbutton btn_treatingwounds skill_treatingwounds' type='roll' value='&{template:survival} {{rollname=Treating Wounds Check}} {{roll=[[2d6 + @{skill_treatingwounds_statquery}+@{SkillTreatingWoundsMod}[SKILL]]]}}' name='roll_SkillTreatingWoundsCheck'></button>
+              <input type='checkbox' class='prof skill_treatingwounds'  name='attr_SkillTreatingWoundsProf' value='1' />
+              <input type='checkbox' class='adv skill_treatingwounds' name='attr_SkillTreatingWoundsAdv' value='1' />
+              <input type='checkbox' class='exp skill_treatingwounds' name='attr_SkillTreatingWoundsExp' value='1' />
+              <input type="number" class='Hidden skill_treatingwounds' name="attr_SkillTreatingWoundsWounds" value="0"/>
+              <input type="number" class='Hidden skill_treatingwounds' name="attr_SkillTreatingWoundsMod" value="0" />
+              <input type="number" class='skillwnd skill_treatingwounds' name="attr_SkillTreatingWoundsWounds_Vis" value="@{SkillTreatingWoundsWounds}" disabled="true" />
+              <input type="number" class='skillmod skill_treatingwounds' name="attr_SkillTreatingWoundsMod_Vis" value="@{SkillTreatingWoundsMod}" disabled="true" />
+
+
+			<input type="hidden" name="attr_skill_intimidation_statquery" value="?{Stat|CHA,@{CharismaMod}[CHA]|brn, @{BrawnSecondaryMod}[brn]}">
+              <button class='textbutton btn_intimidation skill_intimidation' type='roll' value='&{template:survival} {{rollname=Intimidation Check}} {{roll=[[2d6 + @{skill_intimidation_statquery}+@{SkillIntimidationMod}[SKILL]]]}}' name='roll_SkillIntimidationCheck'></button>
+              <input type='checkbox' class='prof skill_intimidation'  name='attr_SkillIntimidationProf' value='1' />
+              <input type='checkbox' class='adv skill_intimidation' name='attr_SkillIntimidationAdv' value='1' />
+              <input type='checkbox' class='exp skill_intimidation' name='attr_SkillIntimidationExp' value='1' />
+              <input type="number" class='Hidden skill_intimidation' name="attr_SkillIntimidationWounds" value="0"/>
+              <input type="number" class='Hidden skill_intimidation' name="attr_SkillIntimidationMod" value="0" />
+              <input type="number" class='skillwnd skill_intimidation' name="attr_SkillIntimidationWounds_Vis" value="@{SkillIntimidationWounds}" disabled="true"/>
+              <input type="number" class='skillmod skill_intimidation' name="attr_SkillIntimidationMod_Vis" value="@{SkillIntimidationMod}" disabled="true" />
+          
+          
+			<input type="hidden" name="attr_skill_bluffing_statquery" value="?{Stat|CHA,@{CharismaMod}[CHA]|agi, @{AgilitySecondaryMod}[agi]}">
+              <button class='textbutton btn_bluffing skill_bluffing' type='roll' value='&{template:survival} {{rollname=Bluffing Check}} {{roll=[[2d6 + @{skill_bluffing_statquery}+@{SkillBluffingMod}[SKILL]]]}}' name='roll_SkillBluffingCheck'></button>
+              <input type='checkbox' class='prof skill_bluffing'  name='attr_SkillBluffingProf' value='1' />
+              <input type='checkbox' class='adv skill_bluffing' name='attr_SkillBluffingAdv' value='1' />
+              <input type='checkbox' class='exp skill_bluffing' name='attr_SkillBluffingExp' value='1' />
+              <input type="number" class='Hidden skill_bluffing' name="attr_SkillBluffingWounds" value="0"/>
+              <input type="number" class='Hidden skill_bluffing' name="attr_SkillBluffingMod" value="0" />
+              <input type="number" class='skillwnd skill_bluffing' name="attr_SkillBluffingWounds_Vis" value="@{SkillBluffingWounds}" disabled="true"/>
+              <input type="number" class='skillmod skill_bluffing' name="attr_SkillBluffingMod_Vis" value="@{SkillBluffingMod}" disabled="true" />
+          
+          
+			<input type="hidden" name="attr_skill_charming_statquery" value="?{Stat|CHA,@{CharismaMod}[CHA]|per, @{PerceptionSecondaryMod}[per]}">
+              <button class='textbutton btn_charming skill_charming' type='roll' value='&{template:survival} {{rollname=Charming Check}} {{roll=[[2d6 + @{skill_charming_statquery}+@{SkillCharmingMod}[SKILL]]]}}' name='roll_SkillCharmingCheck'></button>
+              <input type='checkbox' class='prof skill_charming'  name='attr_SkillCharmingProf' value='1' />
+              <input type='checkbox' class='adv skill_charming' name='attr_SkillCharmingAdv' value='1' />
+              <input type='checkbox' class='exp skill_charming' name='attr_SkillCharmingExp' value='1' />
+              <input type="number" class='Hidden skill_charming' name="attr_SkillCharmingWounds" value="0"/>
+              <input type="number" class='Hidden skill_charming' name="attr_SkillCharmingMod" value="0" />
+              <input type="number" class='skillwnd skill_charming' name="attr_SkillCharmingWounds_Vis" value="@{SkillCharmingWounds}" disabled="true"/>
+              <input type="number" class='skillmod skill_charming' name="attr_SkillCharmingMod_Vis" value="@{SkillCharmingMod}" disabled="true" />
+          
+          
+			<input type="hidden" name="attr_skill_trading_statquery" value="?{Stat|CHA,@{CharismaMod}[CHA]|smr, @{SmartsSecondaryMod}[smr]}">
+              <button class='textbutton btn_trading skill_trading' type='roll' value='&{template:survival} {{rollname=Trading Check}} {{roll=[[2d6 + @{skill_trading_statquery}+@{SkillTradingMod}[SKILL]]]}}' name='roll_SkillTradingCheck'></button>
+              <input type='checkbox' class='prof skill_trading'  name='attr_SkillTradingProf' value='1' />
+              <input type='checkbox' class='adv skill_trading' name='attr_SkillTradingAdv' value='1' />
+              <input type='checkbox' class='exp skill_trading' name='attr_SkillTradingExp' value='1' />
+              <input type="number" class='Hidden skill_trading' name="attr_SkillTradingWounds" value="0"/>
+              <input type="number" class='Hidden skill_trading' name="attr_SkillTradingMod" value="0" />
+              <input type="number" class='skillwnd skill_trading' name="attr_SkillTradingWounds_Vis" value="@{SkillTradingWounds}" disabled="true"/>
+              <input type="number" class='skillmod skill_trading' name="attr_SkillTradingMod_Vis" value="@{SkillTradingMod}" disabled="true" />
+          
+		  
+      <textarea class="attr_bonds" name="attr_bonds"></textarea>
+	  
+      <textarea class="attr_inventory" name="attr_inventory"></textarea>
+	  
+      <div class="wounds">
+		<fieldset class="repeating_wounds"> 
+			<input type="text" class="attr_wounddesc" name="attr_wounddesc" /> 
+			<select name="attr_woundloc" class="attr_woundloc"> 
+				<option value="-">-</option>
+				<option value="Head">Head</option>
+				<option value="Body">Body</option>
+				<option value="R.Arm">R.Arm</option>
+				<option value="L.Arm">L.Arm</option>
+				<option value="R.Leg">R.Leg</option>
+				<option value="L.Leg">L.Leg</option>
+				<option value="Other">Other</option>
+			</select>
+			<select name="attr_woundeffect" class="attr_woundeffect"> 
+				<option value="-">-</option>
+				<optgroup label="Minor wound">
+					<option value="CloseCombat">Close Combat</option>
+					<option value="ShootingFirearms">Shooting Firearms</option>
+					<option value="Sharpshooting">Sharpshooting</option>
+					<option value="HeavyWeaponry">Heavy Weaponry</option>
+					<option value="UsingExplosives">Using Explosives</option>
+					<option value="Athletics">Athletics</option>
+					<option value="Sneaking">Sneaking</option>
+					<option value="Pathfinding">Pathfinding</option>
+					<option value="Driving">Driving</option>
+					<option value="Lockpicking">Lockpicking</option>
+					<option value="Stealing">Stealing</option>
+					<option value="Scavenging">Scavenging</option>
+					<option value="Chemistry">Chemistry</option>
+					<option value="Electronics">Electronics</option>
+					<option value="Mechanics">Mechanics</option>
+					<option value="TreatingWounds">Treating Wounds</option>
+					<option value="Intimidation">Intimidation</option>
+					<option value="Bluffing">Bluffing</option>
+					<option value="Charming">Charming</option>
+					<option value="Trading">Trading</option>
+				</optgroup>
+				<optgroup label="Major or fatal wound">
+					<option value="Brawn">Brawn</option>
+					<option value="Agility">Agility</option>
+					<option value="Endurance">Endurance</option>
+					<option value="Perception">Perception</option>
+					<option value="Smarts">Smarts</option>
+					<option value="Charisma">Charisma</option>
+				</optgroup>
+			</select>
+			<select name="attr_woundsev" class="attr_woundsev"> 
+				<option value="-">-</option>
+				<option value="Minor">Minor</option>
+				<option value="Major">Major</option>
+				<option value="Fatal">Fatal</option>
+			</select>
+		</fieldset>
+	  </div>
+	  
+</div>
+<div class="macros">
+	<div>
+		To inflict wound:<br/>
+		Melee attack: <input type='checkbox'  name='attr_ToWoundIsMelee' value='1' /> Weapon bonus (incl. heavy weapon bonus):  <input type='number'  name='attr_ToWoundWeaponBonus' value='0' /> Target armor:  <input type='number'  name='attr_ToWoundTargetArmor' value='0' /> <button type='roll' value='&{template:survival} {{rollname=To Wound}} {{wound=[[2d6 - (@{ToWoundIsMelee}*@{BrawnMod}+@{ToWoundWeaponBonus})[Attack bonus]+@{ToWoundTargetArmor}[Enemy armor]]]}}' name='roll_ToWound'>Roll to wound</button>
+	</div>
+	<div>
+		To take wound:<br/>
+		Armor:  <input type='number'  name='attr_TakeWoundArmor' value='0' /> Enemy attack bonus:  <input type='number'  name='attr_TakeWoundAttack' value='0' /> <button type='roll' value='&{template:survival} {{rollname=To Take Wound}} {{wound=[[2d6 + @{EnduranceMod}[Endurance]+@{TakeWoundArmor}[Armor]-@{TakeWoundAttack}[Attack bonus]]]}}' name='roll_ToWound'>Roll to take wound</button>
+	</div>
+</div>
+
+<script type="text/worker">
+
+on("change:trade", function() {
+    SetTradeDescription();
+});
+
+on("change:temper", function() {
+    SetTemperDescription();
+});
+
+on("change:brawn change:agility change:endurance change:perception change:smarts change:charisma", function(eventInfo) {
+	GetWounds();
+});
+
+on("change:skillclosecombatprof change:skillclosecombatadv change:skillclosecombatexp change:skillshootingfirearmsprof change:skillshootingfirearmsadv change:skillshootingfirearmsexp change:skillsharpshootingprof change:skillsharpshootingadv change:skillsharpshootingexp", function(eventinfo) {
+	GetWounds();
+});
+
+on("change:skillheavyweaponryprof change:skillheavyweaponryadv change:skillheavyweaponryexp change:skillusingexplosivesprof change:skillusingexplosivesadv change:skillusingexplosivesexp change:skillathleticsprof change:skillathleticsadv change:skillathleticsexp", function(eventinfo) {
+	GetWounds();
+});
+
+on("change:skillsneakingprof change:skillsneakingadv change:skillsneakingexp change:skillpathfindingprof change:skillpathfindingadv change:skillpathfindingexp change:skilldrivingprof change:skilldrivingadv change:skilldrivingexp", function(eventinfo) {
+	GetWounds();
+});
+
+on("change:skilllockpickingprof change:skilllockpickingadv change:skilllockpickingexp change:skillstealingprof change:skillstealingadv change:skillstealingexp change:skillscavengingprof change:skillscavengingadv change:skillscavengingexp", function(eventinfo) {
+	GetWounds();
+});
+
+on("change:skillchemistryprof change:skillchemistryadv change:skillchemistryexp change:skillelectronicsprof change:skillelectronicsadv change:skillelectronicsexp change:skillmechanicsprof change:skillmechanicsadv change:skillmechanicsexp", function(eventinfo) {
+	GetWounds();
+});
+
+on("change:skilltreatingwoundsprof change:skilltreatingwoundsadv change:skilltreatingwoundsexp change:skillintimidationprof change:skillintimidationadv change:skillintimidationexp change:skillbluffingprof change:skillbluffingadv change:skillbluffingexp", function(eventinfo) {
+	GetWounds();
+});
+
+on("change:skillcharmingprof change:skillcharmingadv change:skillcharmingexp change:skilltradingprof change:skilltradingadv change:skilltradingexp change:repeating_wounds:woundeffect", function(eventinfo) {
+	GetWounds();
+});
+
+
+
+
+on('sheet:opened',function(){
+    SetTradeDescription();
+    SetTemperDescription();
+	GetWounds();
+});
+
+function GetWounds(){
+	getSectionIDs("repeating_wounds", function(idarray) {
+		var ids = [];
+		for(var i=0; i < idarray.length; i++) {
+			ids.push("repeating_wounds_" + idarray[i] + "_woundeffect");
+		}
+		
+		if(ids.length > 0){
+			getAttrs(ids, function(values){
+				CalcStatModifiers(values);
+				CalcSkillModifiers(values);
+			});
+		} else {
+			CalcStatModifiers(ids);
+			CalcSkillModifiers(ids);
+		}
+   });
+}
+
+function CalcStatModifiers(wounds){
+	getAttrs(["Brawn","Agility","Endurance","Perception","Smarts","Charisma"], function(values){
+		var mods = { 
+			BrawnWounds: 0,
+			AgilityWounds: 0 ,
+			EnduranceWounds: 0 ,
+			PerceptionWounds: 0 ,
+			SmartsWounds: 0 ,
+			CharismaWounds: 0 ,
+			BrawnMod: 0,
+			AgilityMod: 0 ,
+			EnduranceMod: 0 ,
+			PerceptionMod: 0 ,
+			SmartsMod: 0 ,
+			CharismaMod: 0 ,
+			BrawnSecondaryMod: 0,
+			AgilitySecondaryMod: 0 ,
+			EnduranceSecondaryMod: 0 ,
+			PerceptionSecondaryMod: 0 ,
+			SmartsSecondaryMod: 0 ,
+			CharismaSecondaryMod: 0 
+		};
+		
+		for (var key in wounds) {
+			if(wounds[key] == "Brawn") {values.Brawn--; mods.BrawnWounds++;}
+			else if(wounds[key] == "Agility") {values.Agility--; mods.AgilityWounds++;}
+			else if(wounds[key] == "Endurance") {values.Endurance--; mods.EnduranceWounds++;}
+			else if(wounds[key] == "Perception") {values.Perception--; mods.PerceptionWounds++;}
+			else if(wounds[key] == "Smarts") {values.Smarts--; mods.SmartsWounds++;}
+			else if(wounds[key] == "Charisma") {values.Charisma--; mods.CharismaWounds++;}
+		}
+		
+		mods.BrawnMod = values.Brawn;
+		if(values.Brawn > 0){
+			mods.BrawnSecondaryMod = Math.floor(values.Brawn / 3) + 1;
+		} else {
+			mods.BrawnSecondaryMod = values.Brawn;
+		}
+		
+		mods.AgilityMod = values.Agility;
+		if(values.Agility > 0){
+			mods.AgilitySecondaryMod = Math.floor(values.Agility / 3) + 1;
+		} else {
+			mods.AgilitySecondaryMod = values.Agility;
+		}
+		
+		mods.EnduranceMod = values.Endurance;
+		if(values.Endurance > 0){
+			mods.EnduranceSecondaryMod = Math.floor(values.Endurance / 3) + 1;
+		} else {
+			mods.EnduranceSecondaryMod = values.Endurance;
+		}
+		
+		mods.PerceptionMod = values.Perception;
+		if(values.Perception > 0){
+			mods.PerceptionSecondaryMod = Math.floor(values.Perception / 3) + 1;
+		} else {
+			mods.PerceptionSecondaryMod = values.Perception;
+		}
+		
+		mods.SmartsMod = values.Smarts;
+		if(values.Smarts > 0){
+			mods.SmartsSecondaryMod = Math.floor(values.Smarts / 3) + 1;
+		} else {
+			mods.SmartsSecondaryMod = values.Smarts;
+		}
+		
+		mods.CharismaMod = values.Charisma;
+		if(values.Charisma > 0){
+			mods.CharismaSecondaryMod = Math.floor(values.Charisma / 3) + 1;
+		} else {
+			mods.CharismaSecondaryMod = values.Charisma;
+		}
+		
+		setAttrs(mods);
+	});
+}
+
+function CalcSkillModifiers(wounds){
+	getAttrs(["SkillCloseCombatProf", "SkillCloseCombatAdv", "SkillCloseCombatExp",
+			  "SkillShootingFirearmsProf", "SkillShootingFirearmsAdv", "SkillShootingFirearmsExp",
+			  "SkillSharpshootingProf", "SkillSharpshootingAdv", "SkillSharpshootingExp",
+			  "SkillHeavyWeaponryProf", "SkillHeavyWeaponryAdv", "SkillHeavyWeaponryExp",
+			  "SkillUsingExplosivesProf", "SkillUsingExplosivesAdv", "SkillUsingExplosivesExp",
+			  "SkillAthleticsProf", "SkillAthleticsAdv", "SkillAthleticsExp",
+			  "SkillSneakingProf", "SkillSneakingAdv", "SkillSneakingExp",
+			  "SkillPathfindingProf", "SkillPathfindingAdv", "SkillPathfindingExp",
+			  "SkillDrivingProf", "SkillDrivingAdv", "SkillDrivingExp",
+			  "SkillLockpickingProf", "SkillLockpickingAdv", "SkillLockpickingExp",
+			  "SkillStealingProf", "SkillStealingAdv", "SkillStealingExp",
+			  "SkillScavengingProf", "SkillScavengingAdv", "SkillScavengingExp",
+			  "SkillChemistryProf", "SkillChemistryAdv", "SkillChemistryExp",
+			  "SkillElectronicsProf", "SkillElectronicsAdv", "SkillElectronicsExp",
+			  "SkillMechanicsProf", "SkillMechanicsAdv", "SkillMechanicsExp",
+			  "SkillTreatingWoundsProf", "SkillTreatingWoundsAdv", "SkillTreatingWoundsExp",
+			  "SkillIntimidationProf", "SkillIntimidationAdv", "SkillIntimidationExp",
+			  "SkillBluffingProf", "SkillBluffingAdv", "SkillBluffingExp",
+			  "SkillCharmingProf", "SkillCharmingAdv", "SkillCharmingExp",
+			  "SkillTradingProf", "SkillTradingAdv", "SkillTradingExp"], function(values){
+		var mods = { 
+			SkillCloseCombatWounds: 0,
+			SkillCloseCombatMod: -2,
+			SkillShootingFirearmsWounds: 0,
+			SkillShootingFirearmsMod: -2,
+			SkillSharpshootingWounds: 0,
+			SkillSharpshootingMod: -2,
+			SkillHeavyWeaponryWounds: 0,
+			SkillHeavyWeaponryMod: -2,
+			SkillUsingExplosivesWounds: 0,
+			SkillUsingExplosivesMod: -2,
+			SkillAthleticsWounds: 0,
+			SkillAthleticsMod: -2,
+			SkillSneakingWounds: 0,
+			SkillSneakingMod: -2,
+			SkillPathfindingWounds: 0,
+			SkillPathfindingMod: -2,
+			SkillDrivingWounds: 0,
+			SkillDrivingMod: -2,
+			SkillLockpickingWounds: 0,
+			SkillLockpickingMod: -2,
+			SkillStealingWounds: 0,
+			SkillStealingMod: -2,
+			SkillScavengingWounds: 0,
+			SkillScavengingMod: -2,
+			SkillChemistryWounds: 0,
+			SkillChemistryMod: -2,
+			SkillElectronicsWounds: 0,
+			SkillElectronicsMod: -2,
+			SkillMechanicsWounds: 0,
+			SkillMechanicsMod: -2,
+			SkillTreatingWoundsWounds: 0,
+			SkillTreatingWoundsMod: -2,
+			SkillIntimidationWounds: 0,
+			SkillIntimidationMod: -2,
+			SkillBluffingWounds: 0,
+			SkillBluffingMod: -2,
+			SkillCharmingWounds: 0,
+			SkillCharmingMod: -2,
+			SkillTradingWounds: 0,
+			SkillTradingMod: -2
+		};
+		
+		for (var key in wounds) {
+			if(wounds[key] == "CloseCombat") {mods.SkillCloseCombatWounds++;}
+			else if(wounds[key] == "ShootingFirearms") {mods.SkillShootingFirearmsWounds++;}
+			else if(wounds[key] == "Sharpshooting") {mods.SkillSharpshootingWounds++;}
+			else if(wounds[key] == "HeavyWeaponry") {mods.SkillHeavyWeaponryWounds++;}
+			else if(wounds[key] == "UsingExplosives") {mods.SkillUsingExplosivesWounds++;}
+			else if(wounds[key] == "Athletics") {mods.SkillAthleticsWounds++;}
+			else if(wounds[key] == "Sneaking") {mods.SkillSneakingWounds++;}
+			else if(wounds[key] == "Pathfinding") {mods.SkillPathfindingWounds++;}
+			else if(wounds[key] == "Driving") {mods.SkillDrivingWounds++;}
+			else if(wounds[key] == "Lockpicking") {mods.SkillLockpickingWounds++;}
+			else if(wounds[key] == "Stealing") {mods.SkillStealingWounds++;}
+			else if(wounds[key] == "Scavenging") {mods.SkillScavengingWounds++;}
+			else if(wounds[key] == "Chemistry") {mods.SkillChemistryWounds++;}
+			else if(wounds[key] == "Electronics") {mods.SkillElectronicsWounds++;}
+			else if(wounds[key] == "Mechanics") {mods.SkillMechanicsWounds++;}
+			else if(wounds[key] == "TreatingWounds") {mods.SkillTreatingWoundsWounds++;}
+			else if(wounds[key] == "Intimidation") {mods.SkillIntimidationWounds++;}
+			else if(wounds[key] == "Bluffing") {mods.SkillBluffingWounds++;}
+			else if(wounds[key] == "Charming") {mods.SkillCharmingWounds++;}
+			else if(wounds[key] == "Trading") {mods.SkillTradingWounds++;}
+		}
+		
+		if(values.SkillCloseCombatProf == 1) mods.SkillCloseCombatMod += 2;
+		if(values.SkillCloseCombatAdv == 1) mods.SkillCloseCombatMod += 1;
+		if(values.SkillCloseCombatExp == 1) mods.SkillCloseCombatMod += 1;
+		mods.SkillCloseCombatMod -= mods.SkillCloseCombatWounds;
+		
+		if(values.SkillShootingFirearmsProf == 1) mods.SkillShootingFirearmsMod += 2;
+		if(values.SkillShootingFirearmsAdv == 1) mods.SkillShootingFirearmsMod += 1;
+		if(values.SkillShootingFirearmsExp == 1) mods.SkillShootingFirearmsMod += 1;
+		mods.SkillShootingFirearmsMod -= mods.SkillShootingFirearmsWounds;
+		
+		if(values.SkillSharpshootingProf == 1) mods.SkillSharpshootingMod += 2;
+		if(values.SkillSharpshootingAdv == 1) mods.SkillSharpshootingMod += 1;
+		if(values.SkillSharpshootingExp == 1) mods.SkillSharpshootingMod += 1;
+		mods.SkillSharpshootingMod -= mods.SkillSharpshootingWounds;
+		
+		if(values.SkillHeavyWeaponryProf == 1) mods.SkillHeavyWeaponryMod += 2;
+		if(values.SkillHeavyWeaponryAdv == 1) mods.SkillHeavyWeaponryMod += 1;
+		if(values.SkillHeavyWeaponryExp == 1) mods.SkillHeavyWeaponryMod += 1;
+		mods.SkillHeavyWeaponryMod -= mods.SkillHeavyWeaponryWounds;
+		
+		if(values.SkillUsingExplosivesProf == 1) mods.SkillUsingExplosivesMod += 2;
+		if(values.SkillUsingExplosivesAdv == 1) mods.SkillUsingExplosivesMod += 1;
+		if(values.SkillUsingExplosivesExp == 1) mods.SkillUsingExplosivesMod += 1;
+		mods.SkillUsingExplosivesMod -= mods.SkillUsingExplosivesWounds;
+		
+		if(values.SkillAthleticsProf == 1) mods.SkillAthleticsMod += 2;
+		if(values.SkillAthleticsAdv == 1) mods.SkillAthleticsMod += 1;
+		if(values.SkillAthleticsExp == 1) mods.SkillAthleticsMod += 1;
+		mods.SkillAthleticsMod -= mods.SkillAthleticsWounds;
+		
+		if(values.SkillSneakingProf == 1) mods.SkillSneakingMod += 2;
+		if(values.SkillSneakingAdv == 1) mods.SkillSneakingMod += 1;
+		if(values.SkillSneakingExp == 1) mods.SkillSneakingMod += 1;
+		mods.SkillSneakingMod -= mods.SkillSneakingWounds;
+		
+		if(values.SkillPathfindingProf == 1) mods.SkillPathfindingMod += 2;
+		if(values.SkillPathfindingAdv == 1) mods.SkillPathfindingMod += 1;
+		if(values.SkillPathfindingExp == 1) mods.SkillPathfindingMod += 1;
+		mods.SkillPathfindingMod -= mods.SkillPathfindingWounds;
+		
+		if(values.SkillDrivingProf == 1) mods.SkillDrivingMod += 2;
+		if(values.SkillDrivingAdv == 1) mods.SkillDrivingMod += 1;
+		if(values.SkillDrivingExp == 1) mods.SkillDrivingMod += 1;
+		mods.SkillDrivingMod -= mods.SkillDrivingWounds;
+		
+		if(values.SkillLockpickingProf == 1) mods.SkillLockpickingMod += 2;
+		if(values.SkillLockpickingAdv == 1) mods.SkillLockpickingMod += 1;
+		if(values.SkillLockpickingExp == 1) mods.SkillLockpickingMod += 1;
+		mods.SkillLockpickingMod -= mods.SkillLockpickingWounds;
+		
+		if(values.SkillStealingProf == 1) mods.SkillStealingMod += 2;
+		if(values.SkillStealingAdv == 1) mods.SkillStealingMod += 1;
+		if(values.SkillStealingExp == 1) mods.SkillStealingMod += 1;
+		mods.SkillStealingMod -= mods.SkillStealingWounds;
+		
+		if(values.SkillScavengingProf == 1) mods.SkillScavengingMod += 2;
+		if(values.SkillScavengingAdv == 1) mods.SkillScavengingMod += 1;
+		if(values.SkillScavengingExp == 1) mods.SkillScavengingMod += 1;
+		mods.SkillScavengingMod -= mods.SkillScavengingWounds;
+		
+		if(values.SkillChemistryProf == 1) mods.SkillChemistryMod += 2;
+		if(values.SkillChemistryAdv == 1) mods.SkillChemistryMod += 1;
+		if(values.SkillChemistryExp == 1) mods.SkillChemistryMod += 1;
+		mods.SkillChemistryMod -= mods.SkillChemistryWounds;
+		
+		if(values.SkillElectronicsProf == 1) mods.SkillElectronicsMod += 2;
+		if(values.SkillElectronicsAdv == 1) mods.SkillElectronicsMod += 1;
+		if(values.SkillElectronicsExp == 1) mods.SkillElectronicsMod += 1;
+		mods.SkillElectronicsMod -= mods.SkillElectronicsWounds;
+		
+		if(values.SkillMechanicsProf == 1) mods.SkillMechanicsMod += 2;
+		if(values.SkillMechanicsAdv == 1) mods.SkillMechanicsMod += 1;
+		if(values.SkillMechanicsExp == 1) mods.SkillMechanicsMod += 1;
+		mods.SkillMechanicsMod -= mods.SkillMechanicsWounds;
+		
+		if(values.SkillTreatingWoundsProf == 1) mods.SkillTreatingWoundsMod += 2;
+		if(values.SkillTreatingWoundsAdv == 1) mods.SkillTreatingWoundsMod += 1;
+		if(values.SkillTreatingWoundsExp == 1) mods.SkillTreatingWoundsMod += 1;
+		mods.SkillTreatingWoundsMod -= mods.SkillTreatingWoundsWounds;
+		
+		if(values.SkillIntimidationProf == 1) mods.SkillIntimidationMod += 2;
+		if(values.SkillIntimidationAdv == 1) mods.SkillIntimidationMod += 1;
+		if(values.SkillIntimidationExp == 1) mods.SkillIntimidationMod += 1;
+		mods.SkillIntimidationMod -= mods.SkillIntimidationWounds;
+		
+		if(values.SkillBluffingProf == 1) mods.SkillBluffingMod += 2;
+		if(values.SkillBluffingAdv == 1) mods.SkillBluffingMod += 1;
+		if(values.SkillBluffingExp == 1) mods.SkillBluffingMod += 1;
+		mods.SkillBluffingMod -= mods.SkillBluffingWounds;
+		
+		if(values.SkillCharmingProf == 1) mods.SkillCharmingMod += 2;
+		if(values.SkillCharmingAdv == 1) mods.SkillCharmingMod += 1;
+		if(values.SkillCharmingExp == 1) mods.SkillCharmingMod += 1;
+		mods.SkillCharmingMod -= mods.SkillCharmingWounds;
+		
+		if(values.SkillTradingProf == 1) mods.SkillTradingMod += 2;
+		if(values.SkillTradingAdv == 1) mods.SkillTradingMod += 1;
+		if(values.SkillTradingExp == 1) mods.SkillTradingMod += 1;
+		mods.SkillTradingMod -= mods.SkillTradingWounds;
+		
+		setAttrs(mods);
+	});
+}
+
+function SetTradeDescription(){
+    getAttrs(["trade"], function(values) {
+      if (values.trade == 'Driver'){
+          setAttrs({ tradedesc: 'Avoid peril on four wheels' });
+      } else if (values.trade == 'Tinker'){
+          setAttrs({ tradedesc: 'Repair or maintain something knackered' });
+      }  else if (values.trade == 'Scout'){
+          setAttrs({ tradedesc: 'Lead others safely onwards' });
+      }  else if (values.trade == 'Gunner'){
+          setAttrs({ tradedesc: 'Carve open a path of blood' });
+      }  else if (values.trade == 'Scientist'){
+          setAttrs({ tradedesc: 'Open up new possibilities through the miracle of science' });
+      }  else if (values.trade == 'Medic'){
+          setAttrs({ tradedesc: 'Selflessly heal someone else' });
+      }  else if (values.trade == 'Spokesman'){
+          setAttrs({ tradedesc: 'Win over the hearts of others' });
+      } 
+   });
+}
+
+function SetTemperDescription(){
+    getAttrs(["temper"], function(values) {
+      if (values.temper == 'Hot-headed'){
+          setAttrs({ temperdesc: 'Act brashly and without second thought when tempted' });
+      } else if (values.temper == 'Cautious'){
+          setAttrs({ temperdesc: 'Avoid confrontation when survival or victory is uncertain' });
+      }  else if (values.temper == 'Straight-shooting'){
+          setAttrs({ temperdesc: 'Tell the things as they are and carry yourself with confidence' });
+      }  else if (values.temper == 'Twisted'){
+          setAttrs({ temperdesc: 'Deviate from social norms, by doing something unacceptable' });
+      }  else if (values.temper == 'Level-headed'){
+          setAttrs({ temperdesc: 'Remain calm, collected and steadfast under pressure' });
+      }
+   });
+}
+
+</script>
+
+<rolltemplate class="sheet-rolltemplate-survival">
+    <div class="sheet-template-container">
+	<div class="sheet-template-header">{{rollname}}</div>
+	{{#stat}}<div class="sheet-template-row">Using stat: {{stat}}</div>{{/stat}}
+	{{#primary}}<div class="sheet-template-row">Using primary stat: {{primary}}</div>{{/primary}}
+	{{#secondary}}<div class="sheet-template-row">Using secondary stat: {{secondary}}</div>{{/secondary}}
+    {{#roll}}
+	<div class="sheet-template-row"><span>Roll: </span>{{roll}} 
+			{{#rollGreater() roll 9}}
+				<span>Success!</span>
+			{{/rollGreater() roll 9}}
+			{{#rollBetween() roll 7 9}}
+				<span>Partial success!</span>
+			{{/rollBetween() roll 7 9}}
+			{{#rollLess() roll 7}}
+				<span>Failure!</span>
+			{{/rollLess() roll 7}}
+	</div>
+    {{/roll}}
+    {{#wound}}
+	<div class="sheet-template-row"><span>Wound roll: </span>{{wound}} 
+			{{#rollGreater() wound 12}}
+				<span>No damage dealt</span>
+			{{/rollGreater() wound 12}}
+			{{#rollBetween() wound 9 12}}
+				<span>Minor wound</span>
+			{{/rollBetween() wound 9 12}}
+			{{#rollBetween() wound 5 8}}
+				<span>Major wound</span>
+			{{/rollBetween() wound 5 8}}
+			{{#rollLess() wound 5}}
+				<span>Fatal wound</span>
+			{{/rollLess() wound 5}}
+	</div>
+    {{/wound}}
+</rolltemplate>
