@@ -88,6 +88,7 @@
               <input type="number" class='Hidden skill_closecombat' name="attr_SkillCloseCombatMod" value="0" />
               <input type="number" class='skillwnd skill_closecombat' name="attr_SkillCloseCombatWounds_Vis" value="@{SkillCloseCombatWounds}" disabled="true"/>
               <input type="number" class='skillmod skill_closecombat' name="attr_SkillCloseCombatMod_Vis" value="@{SkillCloseCombatMod}" disabled="true" />
+              <input type="number" class='skillmod skill_closecombat skill_totalfirstcolumn' name="attr_SkillCloseCombatModBrawn_Vis" value="@{SkillCloseCombatModBrawn}" disabled="true" />
 
 
 			<input type="hidden" name="attr_skill_firearms_statquery" value="?{Stat|PER,@{PerceptionMod}[PER]|agi, @{AgilitySecondaryMod}[agi]|AGI (quickdraw), @{AgilityMod}[AGI (quickdraw)]}">
@@ -536,10 +537,12 @@ function CalcSkillModifiers(wounds){
 			  "SkillIntimidationProf", "SkillIntimidationAdv", "SkillIntimidationExp",
 			  "SkillBluffingProf", "SkillBluffingAdv", "SkillBluffingExp",
 			  "SkillCharmingProf", "SkillCharmingAdv", "SkillCharmingExp",
-			  "SkillTradingProf", "SkillTradingAdv", "SkillTradingExp"], function(values){
+			  "SkillTradingProf", "SkillTradingAdv", "SkillTradingExp",
+			  "Brawn","Agility","Endurance","Perception","Smarts","Charisma"], function(values){
 		var mods = { 
 			SkillCloseCombatWounds: 0,
 			SkillCloseCombatMod: -2,
+			SkillCloseCombatModBrawn: 0,
 			SkillShootingFirearmsWounds: 0,
 			SkillShootingFirearmsMod: -2,
 			SkillSharpshootingWounds: 0,
@@ -607,6 +610,7 @@ function CalcSkillModifiers(wounds){
 		if(values.SkillCloseCombatAdv == 1) mods.SkillCloseCombatMod += 1;
 		if(values.SkillCloseCombatExp == 1) mods.SkillCloseCombatMod += 1;
 		mods.SkillCloseCombatMod -= mods.SkillCloseCombatWounds;
+		mods.SkillCloseCombatModBrawn = Math.min(Number(mods.SkillCloseCombatMod) + Number(values.Brawn), 3);
 		
 		if(values.SkillShootingFirearmsProf == 1) mods.SkillShootingFirearmsMod += 2;
 		if(values.SkillShootingFirearmsAdv == 1) mods.SkillShootingFirearmsMod += 1;
