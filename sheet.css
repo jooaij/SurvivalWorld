@@ -1,7 +1,7 @@
 .sheet-main {
-  min-width: 794px;
+  min-width: 894px;
   min-height: 1122px;
-  width: 794px;
+  width: 894px;
   height: 1122px;
   background-image: url("https://github.com/jooaij/SurvivalWorld/blob/master/Character%20Sheet%20v0%20-%20netver.png?raw=true");
   background-size: contain;
@@ -9,8 +9,8 @@
   position:relative;
 }
 .sheet-macros{
-  min-width: 794px;
-  width: 794px;
+  min-width: 894px;
+  width: 894px;
   font-size: 12px;
 }
 .sheet-macros input{
@@ -48,23 +48,23 @@
     line-height:14px;
     padding:0px;
     margin:0px;
-    width:128px;
+    width:228px;
     border:1px;
 	left:1px;
 }
 
 .attr_woundloc{
-    left:135px;
+    left:235px;
     width:60px;
 }
 
 .attr_woundeffect{
-    left:200px;
+    left:300px;
     width:75px;
 }
 
 .attr_woundsev{
-    left:280px;
+    left:380px;
     width:50px;
 }
 
@@ -92,7 +92,7 @@
 .sheet-wounds .repcontrol_del{
 	height:16px;
 	width:16px;
-	left:336px;
+	left:436px;
 	padding: 0px;
 }
 
@@ -143,14 +143,14 @@ input[type=number]::-webkit-outer-spin-button {
 .attr_level{
     display:inline;
     top:24px;
-    left:460px;
+    left:560px;
     width:34px !important;
 }
 
 .attr_experience{
     display:inline;
     top:24px;
-    left:660px;
+    left:760px;
     width:80px !important;
 }
 
@@ -194,73 +194,73 @@ input[type=number]::-webkit-outer-spin-button {
 .attr_Brawn{
     display:inline;
     top:250px;
-    left:45px;
+    left:100px;
 }
 
 .attr_BrawnWounds{
     display:inline;
     top:250px;
-    left:89px;
+    left:144px;
 }
 
 .attr_Agility{
     display:inline;
     top:250px;
-    left:175px;
+    left:230px;
 }
 
 .attr_AgilityWounds{
     display:inline;
     top:250px;
-    left:219px;
+    left:274px;
 }
 
 .attr_Endurance{
     display:inline;
     top:250px;
-    left:299px;
+    left:354px;
 }
 
 .attr_EnduranceWounds{
     display:inline;
     top:250px;
-    left:343px;
+    left:398px;
 }
 
 .attr_Perception{
     display:inline;
     top:250px;
-    left:426px;
+    left:481px;
 }
 
 .attr_PerceptionWounds{
     display:inline;
     top:250px;
-    left:470px;
+    left:525px;
 }
 
 .attr_Smarts{
     display:inline;
     top:250px;
-    left:554px;
+    left:609px;
 }
 
 .attr_SmartsWounds{
     display:inline;
     top:250px;
-    left:598px;
+    left:653px;
 }
 
 .attr_Charisma{
     display:inline;
     top:250px;
-    left:684px;
+    left:739px;
 }
 
 .attr_CharismaWounds{
     display:inline;
     top:250px;
-    left:728px;
+    left:783px;
 }
 
 .sheet-statbtn{
@@ -624,7 +624,7 @@ input[type=number]::-webkit-outer-spin-button {
 .attr_bonds{
     display:inline;
     top:308px;
-    left:380px;
+    left:480px;
     width:385px;
     height:320px;
 }
@@ -632,7 +632,7 @@ input[type=number]::-webkit-outer-spin-button {
 .attr_inventory{
     display:inline;
     top:695px;
-    left:380px;
+    left:480px;
     width:385px;
     height:400px;
 }
