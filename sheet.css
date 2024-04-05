@@ -539,6 +539,19 @@ input[type=number]::-webkit-outer-spin-button {
     width:18px !important;
 }
 
+.sheet-skill_totalfirstcolumn{
+    left: 364px;
+}
+
+.sheet-skill_totalsecondcolumn{
+    left: 395px;
+}
+
+.sheet-skill_totalthirdcolumn{
+    left: 430px;
+}
+
+
 .sheet-skill_closecombat{
     top:309px;
 }
