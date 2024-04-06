@@ -89,6 +89,7 @@
               <input type="number" class='skillwnd skill_closecombat' name="attr_SkillCloseCombatWounds_Vis" value="@{SkillCloseCombatWounds}" disabled="true"/>
               <input type="number" class='skillmod skill_closecombat' name="attr_SkillCloseCombatMod_Vis" value="@{SkillCloseCombatMod}" disabled="true" />
               <input type="number" class='skillmod skill_closecombat skill_totalfirstcolumn' name="attr_SkillCloseCombatModBrawn_Vis" value="@{SkillCloseCombatModBrawn}" disabled="true" />
+              <input type="number" class='skillmod skill_closecombat skill_totalsecondcolumn' name="attr_SkillCloseCombatModAgility_Vis" value="@{SkillCloseCombatModAgility}" disabled="true" />
 
 
 			<input type="hidden" name="attr_skill_firearms_statquery" value="?{Stat|PER,@{PerceptionMod}[PER]|agi, @{AgilitySecondaryMod}[agi]|AGI (quickdraw), @{AgilityMod}[AGI (quickdraw)]}">
@@ -100,6 +101,8 @@
               <input type="number" class='Hidden skill_firearms' name="attr_SkillShootingFirearmsMod" value="0" />
               <input type="number" class='skillwnd skill_firearms' name="attr_SkillShootingFirearmsWounds_Vis" value="@{SkillShootingFirearmsWounds}" disabled="true"/>
               <input type="number" class='skillmod skill_firearms' name="attr_SkillShootingFirearmsMod_Vis" value="@{SkillShootingFirearmsMod}" disabled="true" />
+              <input type="number" class='skillmod skill_firearms skill_totalfirstcolumn' name="attr_SkillShootingFirearmsModAgility_Vis" value="@{SkillShootingFirearmsModAgility}" disabled="true" />
+              <input type="number" class='skillmod skill_firearms skill_totalsecondcolumn' name="attr_SkillShootingFirearmsModPerception_Vis" value="@{SkillShootingFirearmsModPerception}" disabled="true" />
 
 
               <button class='textbutton btn_sharpshooting skill_sharpshooting' type='roll' value='&{template:survival} {{rollname=Sharpshooting Check}} {{roll=[[2d6 + @{PerceptionMod}[PER]+@{SkillSharpshootingMod}[SKILL]]]}}' name='roll_SkillSharpshootingCheck'></button>
@@ -110,6 +113,7 @@
               <input type="number" class='Hidden skill_sharpshooting' name="attr_SkillSharpshootingMod" value="0" />
               <input type="number" class='skillwnd skill_sharpshooting' name="attr_SkillSharpshootingWounds_Vis" value="@{SkillSharpshootingWounds}" disabled="true"/>
               <input type="number" class='skillmod skill_sharpshooting' name="attr_SkillSharpshootingMod_Vis" value="@{SkillSharpshootingMod}" disabled="true" />
+              <input type="number" class='skillmod skill_sharpshooting skill_totalfirstcolumn' name="attr_SkillSharpshootingModPerception_Vis" value="@{SkillSharpshootingModPerception}" disabled="true" />
 
 
 			<input type="hidden" name="attr_skill_heavyweaponry_statquery" value="?{Stat|BRN,@{BrawnMod}[BRN]|end, @{EnduranceSecondaryMod}[end]|per (scoped), @{PerceptionSecondaryMod}[per (scoped)]}">
@@ -122,6 +126,8 @@
               <input type="number" class='Hidden skill_heavyweaponry' name="attr_SkillHeavyWeaponryMod" value="0" />
               <input type="number" class='skillwnd skill_heavyweaponry' name="attr_SkillHeavyWeaponryWounds_Vis" value="@{SkillHeavyWeaponryWounds}" disabled="true"/>
               <input type="number" class='skillmod skill_heavyweaponry' name="attr_SkillHeavyWeaponryMod_Vis" value="@{SkillHeavyWeaponryMod}" disabled="true" />
+              <input type="number" class='skillmod skill_heavyweaponry skill_totalfirstcolumn' name="attr_SkillHeavyWeaponryModBrawn_Vis" value="@{SkillHeavyWeaponryModBrawn}" disabled="true" />
+              <input type="number" class='skillmod skill_heavyweaponry skill_totalsecondcolumn' name="attr_SkillHeavyWeaponryModEndurance_Vis" value="@{SkillHeavyWeaponryModEndurance}" disabled="true" />
 
 
 			<input type="hidden" name="attr_skill_explosives_statquery" value="?{Stat|AGI,@{AgilityMod}[AGI]|smr, @{SmartsSecondaryMod}[smr]}">
@@ -133,6 +139,8 @@
               <input type="number" class='Hidden skill_explosives' name="attr_SkillUsingExplosivesMod" value="0" />
               <input type="number" class='skillwnd skill_explosives' name="attr_SkillUsingExplosivesWounds_Vis" value="@{SkillUsingExplosivesWounds}" disabled="true"/>
               <input type="number" class='skillmod skill_explosives' name="attr_SkillUsingExplosivesMod_Vis" value="@{SkillUsingExplosivesMod}" disabled="true" />
+              <input type="number" class='skillmod skill_explosives skill_totalfirstcolumn' name="attr_SkillUsingExplosivesModAgility_Vis" value="@{SkillUsingExplosivesModAgility}" disabled="true" />
+              <input type="number" class='skillmod skill_explosives skill_totalsecondcolumn' name="attr_SkillUsingExplosivesModSmarts_Vis" value="@{SkillUsingExplosivesModSmarts}" disabled="true" />
 
 
 			<input type="hidden" name="attr_skill_athletics_statquery" value="?{Stat|BRN,@{BrawnMod}[BRN]|AGI, @{AgilityMod}[AGI]|end, @{EnduranceSecondaryMod}[end]}">
@@ -144,6 +152,9 @@
               <input type="number" class='Hidden skill_athletics' name="attr_SkillAthleticsMod" value="0"  />
               <input type="number" class='skillwnd skill_athletics' name="attr_SkillAthleticsWounds_Vis" value="@{SkillAthleticsWounds}" disabled="true"/>
               <input type="number" class='skillmod skill_athletics' name="attr_SkillAthleticsMod_Vis" value="@{SkillAthleticsMod}" disabled="true" />
+              <input type="number" class='skillmod skill_athletics skill_totalfirstcolumn' name="attr_SkillAthleticsModBrawn_Vis" value="@{SkillAthleticsModBrawn}" disabled="true" />
+              <input type="number" class='skillmod skill_athletics skill_totalsecondcolumn' name="attr_SkillAthleticsModAgility_Vis" value="@{SkillAthleticsModAgility}" disabled="true" />
+              <input type="number" class='skillmod skill_athletics skill_totalthirdcolumn' name="attr_SkillAthleticsModEndurance_Vis" value="@{SkillAthleticsModEndurance}" disabled="true" />
 
 
 			<input type="hidden" name="attr_skill_sneaking_statquery" value="?{Stat|AGI,@{AgilityMod}[AGI]|per, @{PerceptionSecondaryMod}[per]}">
@@ -155,6 +166,8 @@
               <input type="number" class='Hidden skill_sneaking' name="attr_SkillSneakingMod" value="0" />
               <input type="number" class='skillwnd skill_sneaking' name="attr_SkillSneakingWounds_Vis" value="@{SkillSneakingWounds}" disabled="true"/>
               <input type="number" class='skillmod skill_sneaking' name="attr_SkillSneakingMod_Vis" value="@{SkillSneakingMod}" disabled="true" />
+              <input type="number" class='skillmod skill_sneaking skill_totalfirstcolumn' name="attr_SkillSneakingModAgility_Vis" value="@{SkillSneakingModAgility}" disabled="true" />
+              <input type="number" class='skillmod skill_sneaking skill_totalsecondcolumn' name="attr_SkillSneakingModPerception_Vis" value="@{SkillSneakingModPerception}" disabled="true" />
 
 
 			<input type="hidden" name="attr_skill_pathfinding_statquery" value="?{Stat|PER,@{PerceptionMod}[PER]|agi, @{AgilitySecondaryMod}[agi]}">
@@ -166,6 +179,8 @@
               <input type="number" class='Hidden skill_pathfinding' name="attr_SkillPathfindingMod" value="0" />
               <input type="number" class='skillwnd skill_pathfinding' name="attr_SkillPathfindingWounds_Vis" value="@{SkillPathfindingWounds}" disabled="true"/>
               <input type="number" class='skillmod skill_pathfinding' name="attr_SkillPathfindingMod_Vis" value="@{SkillPathfindingMod}" disabled="true" />
+              <input type="number" class='skillmod skill_pathfinding skill_totalfirstcolumn' name="attr_SkillPathfindingModAgility_Vis" value="@{SkillPathfindingModAgility}" disabled="true" />
+              <input type="number" class='skillmod skill_pathfinding skill_totalsecondcolumn' name="attr_SkillPathfindingModPerception_Vis" value="@{SkillPathfindingModPerception}" disabled="true" />
 
 
 			<input type="hidden" name="attr_skill_driving_statquery" value="?{Stat|AGI,@{AgilityMod}[AGI]|per, @{PerceptionSecondaryMod}[per]}">
@@ -177,6 +192,8 @@
               <input type="number" class='Hidden skill_driving' name="attr_SkillDrivingMod" value="0" />
               <input type="number" class='skillwnd skill_driving' name="attr_SkillDrivingWounds_Vis" value="@{SkillDrivingWounds}" disabled="true"/>
               <input type="number" class='skillmod skill_driving' name="attr_SkillDrivingMod_Vis" value="@{SkillDrivingMod}" disabled="true" />
+              <input type="number" class='skillmod skill_driving skill_totalfirstcolumn' name="attr_SkillDrivingModAgility_Vis" value="@{SkillDrivingModAgility}" disabled="true" />
+              <input type="number" class='skillmod skill_driving skill_totalsecondcolumn' name="attr_SkillDrivingModPerception_Vis" value="@{SkillDrivingModPerception}" disabled="true" />
 
 
 			<input type="hidden" name="attr_skill_lockpicking_statquery" value="?{Stat|PER,@{PerceptionMod}[PER]|agi, @{AgilitySecondaryMod}[agi]}">
@@ -188,6 +205,8 @@
               <input type="number" class='Hidden skill_lockpicking' name="attr_SkillLockpickingMod" value="0" />
               <input type="number" class='skillwnd skill_lockpicking' name="attr_SkillLockpickingWounds_Vis" value="@{SkillLockpickingWounds}" disabled="true"/>
               <input type="number" class='skillmod skill_lockpicking' name="attr_SkillLockpickingMod_Vis" value="@{SkillLockpickingMod}" disabled="true" />
+              <input type="number" class='skillmod skill_lockpicking skill_totalfirstcolumn' name="attr_SkillLockpickingModAgility_Vis" value="@{SkillLockpickingModAgility}" disabled="true" />
+              <input type="number" class='skillmod skill_lockpicking skill_totalsecondcolumn' name="attr_SkillLockpickingModPerception_Vis" value="@{SkillLockpickingModPerception}" disabled="true" />
 
 
 			<input type="hidden" name="attr_skill_stealing_statquery" value="?{Stat|AGI,@{AgilityMod}[AGI]|per, @{PerceptionSecondaryMod}[per]}">
@@ -199,6 +218,8 @@
               <input type="number" class='Hidden skill_stealing' name="attr_SkillStealingMod" value="0"/>
               <input type="number" class='skillwnd skill_stealing' name="attr_SkillStealingWounds_Vis" value="@{SkillStealingWounds}" disabled="true" />
               <input type="number" class='skillmod skill_stealing' name="attr_SkillStealingMod_Vis" value="@{SkillStealingMod}" disabled="true" />
+              <input type="number" class='skillmod skill_stealing skill_totalfirstcolumn' name="attr_SkillStealingModAgility_Vis" value="@{SkillStealingModAgility}" disabled="true" />
+              <input type="number" class='skillmod skill_stealing skill_totalsecondcolumn' name="attr_SkillStealingModPerception_Vis" value="@{SkillStealingModPerception}" disabled="true" />
 
 
 			<input type="hidden" name="attr_skill_scavenging_statquery" value="?{Stat|BRN,@{BrawnMod}[BRN]|smr, @{SmartsSecondaryMod}[smr]|end, @{EnduranceSecondaryMod}[end]}">
@@ -210,6 +231,9 @@
               <input type="number" class='Hidden skill_scavenging' name="attr_SkillScavengingMod" value="0" />
               <input type="number" class='skillwnd skill_scavenging' name="attr_SkillScavengingWounds_Vis" value="@{SkillScavengingWounds}" disabled="true"/>
               <input type="number" class='skillmod skill_scavenging' name="attr_SkillScavengingMod_Vis" value="@{SkillScavengingMod}" disabled="true" />
+              <input type="number" class='skillmod skill_scavenging skill_totalfirstcolumn' name="attr_SkillScavengingModBrawn_Vis" value="@{SkillScavengingModBrawn}" disabled="true" />
+              <input type="number" class='skillmod skill_scavenging skill_totalsecondcolumn' name="attr_SkillScavengingModEndurance_Vis" value="@{SkillScavengingModEndurance}" disabled="true" />
+              <input type="number" class='skillmod skill_scavenging skill_totalthirdcolumn' name="attr_SkillScavengingModSmarts_Vis" value="@{SkillScavengingModSmarts}" disabled="true" />
 
 
               <button class='textbutton btn_chemistry skill_chemistry' type='roll' value='&{template:survival} {{rollname=Chemistry Check}} {{roll=[[2d6 + @{SmartsMod}[SMR]+@{SkillChemistryMod}[SKILL]]]}}' name='roll_SkillChemistryCheck'></button>
@@ -220,6 +244,7 @@
               <input type="number" class='Hidden skill_chemistry' name="attr_SkillChemistryMod" value="0" />
               <input type="number" class='skillwnd skill_chemistry' name="attr_SkillChemistryWounds_Vis" value="@{SkillChemistryWounds}" disabled="true"/>
               <input type="number" class='skillmod skill_chemistry' name="attr_SkillChemistryMod_Vis" value="@{SkillChemistryMod}" disabled="true" />
+              <input type="number" class='skillmod skill_chemistry skill_totalfirstcolumn' name="attr_SkillChemistryModSmarts_Vis" value="@{SkillChemistryModSmarts}" disabled="true" />
 
 
               <button class='textbutton btn_electronics skill_electronics' type='roll' value='&{template:survival} {{rollname=Electronics Check}} {{roll=[[2d6 + @{SmartsMod}[SMR]+@{SkillElectronicsMod}[SKILL]]]}}' name='roll_SkillElectronicsCheck'></button>
@@ -230,6 +255,7 @@
               <input type="number" class='Hidden skill_electronics' name="attr_SkillElectronicsMod" value="0"/>
               <input type="number" class='skillwnd skill_electronics' name="attr_SkillElectronicsWounds_Vis" value="@{SkillElectronicsWounds}" disabled="true" />
               <input type="number" class='skillmod skill_electronics' name="attr_SkillElectronicsMod_Vis" value="@{SkillElectronicsMod}" disabled="true" />
+              <input type="number" class='skillmod skill_electronics skill_totalfirstcolumn' name="attr_SkillElectronicsModSmarts_Vis" value="@{SkillElectronicsModSmarts}" disabled="true" />
 
 
 			<input type="hidden" name="attr_skill_mechanics_statquery" value="?{Stat|SMR,@{SmartsMod}[SMR]|brn, @{BrawnSecondaryMod}[brn]}">
@@ -241,6 +267,8 @@
               <input type="number" class='Hidden skill_mechanics' name="attr_SkillMechanicsMod" value="0" />
               <input type="number" class='skillwnd skill_mechanics' name="attr_SkillMechanicsWounds_Vis" value="@{SkillMechanicsWounds}" disabled="true"/>
               <input type="number" class='skillmod skill_mechanics' name="attr_SkillMechanicsMod_Vis" value="@{SkillMechanicsMod}" disabled="true" />
+              <input type="number" class='skillmod skill_mechanics skill_totalfirstcolumn' name="attr_SkillMechanicsModBrawn_Vis" value="@{SkillMechanicsModBrawn}" disabled="true" />
+              <input type="number" class='skillmod skill_mechanics skill_totalsecondcolumn' name="attr_SkillMechanicsModSmarts_Vis" value="@{SkillMechanicsModSmarts}" disabled="true" />
 
 
 			<input type="hidden" name="attr_skill_treatingwounds_statquery" value="?{Stat|SMR,@{SmartsMod}[SMR]|per, @{PerceptionSecondaryMod}[per]}">
@@ -252,6 +280,8 @@
               <input type="number" class='Hidden skill_treatingwounds' name="attr_SkillTreatingWoundsMod" value="0" />
               <input type="number" class='skillwnd skill_treatingwounds' name="attr_SkillTreatingWoundsWounds_Vis" value="@{SkillTreatingWoundsWounds}" disabled="true" />
               <input type="number" class='skillmod skill_treatingwounds' name="attr_SkillTreatingWoundsMod_Vis" value="@{SkillTreatingWoundsMod}" disabled="true" />
+              <input type="number" class='skillmod skill_treatingwounds skill_totalfirstcolumn' name="attr_SkillTreatingWoundsModPerception_Vis" value="@{SkillTreatingWoundsModPerception}" disabled="true" />
+              <input type="number" class='skillmod skill_treatingwounds skill_totalsecondcolumn' name="attr_SkillTreatingWoundsModSmarts_Vis" value="@{SkillTreatingWoundsModSmarts}" disabled="true" />
 
 
 			<input type="hidden" name="attr_skill_intimidation_statquery" value="?{Stat|CHA,@{CharismaMod}[CHA]|brn, @{BrawnSecondaryMod}[brn]}">
@@ -263,6 +293,8 @@
               <input type="number" class='Hidden skill_intimidation' name="attr_SkillIntimidationMod" value="0" />
               <input type="number" class='skillwnd skill_intimidation' name="attr_SkillIntimidationWounds_Vis" value="@{SkillIntimidationWounds}" disabled="true"/>
               <input type="number" class='skillmod skill_intimidation' name="attr_SkillIntimidationMod_Vis" value="@{SkillIntimidationMod}" disabled="true" />
+              <input type="number" class='skillmod skill_intimidation skill_totalfirstcolumn' name="attr_SkillIntimidationModBrawn_Vis" value="@{SkillIntimidationModBrawn}" disabled="true" />
+              <input type="number" class='skillmod skill_intimidation skill_totalsecondcolumn' name="attr_SkillIntimidationModCharisma_Vis" value="@{SkillIntimidationModCharisma}" disabled="true" />
           
           
 			<input type="hidden" name="attr_skill_bluffing_statquery" value="?{Stat|CHA,@{CharismaMod}[CHA]|agi, @{AgilitySecondaryMod}[agi]}">
@@ -274,6 +306,8 @@
               <input type="number" class='Hidden skill_bluffing' name="attr_SkillBluffingMod" value="0" />
               <input type="number" class='skillwnd skill_bluffing' name="attr_SkillBluffingWounds_Vis" value="@{SkillBluffingWounds}" disabled="true"/>
               <input type="number" class='skillmod skill_bluffing' name="attr_SkillBluffingMod_Vis" value="@{SkillBluffingMod}" disabled="true" />
+              <input type="number" class='skillmod skill_bluffing skill_totalfirstcolumn' name="attr_SkillBluffingModAgility_Vis" value="@{SkillBluffingModAgility}" disabled="true" />
+              <input type="number" class='skillmod skill_intimidation skill_totalsecondcolumn' name="attr_SkillBluffingModCharisma_Vis" value="@{SkillBluffingModCharisma}" disabled="true" />
           
           
 			<input type="hidden" name="attr_skill_charming_statquery" value="?{Stat|CHA,@{CharismaMod}[CHA]|per, @{PerceptionSecondaryMod}[per]}">
@@ -285,6 +319,8 @@
               <input type="number" class='Hidden skill_charming' name="attr_SkillCharmingMod" value="0" />
               <input type="number" class='skillwnd skill_charming' name="attr_SkillCharmingWounds_Vis" value="@{SkillCharmingWounds}" disabled="true"/>
               <input type="number" class='skillmod skill_charming' name="attr_SkillCharmingMod_Vis" value="@{SkillCharmingMod}" disabled="true" />
+              <input type="number" class='skillmod skill_charming skill_totalfirstcolumn' name="attr_SkillCharmingModPerception_Vis" value="@{SkillCharmingModPerception}" disabled="true" />
+              <input type="number" class='skillmod skill_intimidation skill_totalsecondcolumn' name="attr_SkillCharmingModCharisma_Vis" value="@{SkillCharmingModCharisma}" disabled="true" />
           
           
 			<input type="hidden" name="attr_skill_trading_statquery" value="?{Stat|CHA,@{CharismaMod}[CHA]|smr, @{SmartsSecondaryMod}[smr]}">
@@ -296,6 +332,8 @@
               <input type="number" class='Hidden skill_trading' name="attr_SkillTradingMod" value="0" />
               <input type="number" class='skillwnd skill_trading' name="attr_SkillTradingWounds_Vis" value="@{SkillTradingWounds}" disabled="true"/>
               <input type="number" class='skillmod skill_trading' name="attr_SkillTradingMod_Vis" value="@{SkillTradingMod}" disabled="true" />
+              <input type="number" class='skillmod skill_trading skill_totalfirstcolumn' name="attr_SkillTradingModSmarts_Vis" value="@{SkillTradingModSmarts}" disabled="true" />
+              <input type="number" class='skillmod skill_intimidation skill_totalsecondcolumn' name="attr_SkillTradingModCharisma_Vis" value="@{SkillTradingModCharisma}" disabled="true" />
           
 		  
       <textarea class="attr_bonds" name="attr_bonds"></textarea>
@@ -538,49 +576,88 @@ function CalcSkillModifiers(wounds){
 			  "SkillBluffingProf", "SkillBluffingAdv", "SkillBluffingExp",
 			  "SkillCharmingProf", "SkillCharmingAdv", "SkillCharmingExp",
 			  "SkillTradingProf", "SkillTradingAdv", "SkillTradingExp",
-			  "Brawn","Agility","Endurance","Perception","Smarts","Charisma"], function(values){
+			  "BrawnMod","AgilityMod","EnduranceMod","PerceptionMod","SmartsMod","CharismaMod",
+			  "BrawnSecondaryMod","AgilitySecondaryMod","EnduranceSecondaryMod","PerceptionSecondaryMod","SmartsSecondaryMod","CharismaSecondaryMod"], function(values){
 		var mods = { 
 			SkillCloseCombatWounds: 0,
 			SkillCloseCombatMod: -2,
 			SkillCloseCombatModBrawn: 0,
+			SkillCloseCombatModAgility: 0,
 			SkillShootingFirearmsWounds: 0,
 			SkillShootingFirearmsMod: -2,
+			SkillShootingFirearmsModAgility: 0,
+			SkillShootingFirearmsModPerception: 0,
 			SkillSharpshootingWounds: 0,
 			SkillSharpshootingMod: -2,
+			SkillSharpshootingModPerception: 0,
 			SkillHeavyWeaponryWounds: 0,
 			SkillHeavyWeaponryMod: -2,
+			SkillHeavyWeaponryModBrawn: 0,
+			SkillHeavyWeaponryModEndurance: 0,
 			SkillUsingExplosivesWounds: 0,
 			SkillUsingExplosivesMod: -2,
+			SkillUsingExplosivesModAgility: 0,
+			SkillUsingExplosivesModSmarts: 0,
 			SkillAthleticsWounds: 0,
 			SkillAthleticsMod: -2,
+			SkillAthleticsModBrawn: 0,
+			SkillAthleticsModAgility: 0,
+			SkillAthleticsModEndurance: 0,
 			SkillSneakingWounds: 0,
 			SkillSneakingMod: -2,
+			SkillSneakingModAgility: 0,
+			SkillSneakingModPerception: 0,
 			SkillPathfindingWounds: 0,
 			SkillPathfindingMod: -2,
+			SkillPathfindingModAgility: 0,
+			SkillPathfindingModPerception: 0,
 			SkillDrivingWounds: 0,
 			SkillDrivingMod: -2,
+			SkillDrivingModAgility: 0,
+			SkillDrivingModPerception: 0,
 			SkillLockpickingWounds: 0,
 			SkillLockpickingMod: -2,
+			SkillLockpickingModAgility: 0,
+			SkillLockpickingModPerception: 0,
 			SkillStealingWounds: 0,
 			SkillStealingMod: -2,
+			SkillStealingModAgility: 0,
+			SkillStealingModPerception: 0,
 			SkillScavengingWounds: 0,
 			SkillScavengingMod: -2,
+			SkillScavengingModBrawn: 0,
+			SkillScavengingModEndurance: 0,
+			SkillScavengingModSmarts: 0,
 			SkillChemistryWounds: 0,
 			SkillChemistryMod: -2,
+			SkillChemistryModSmarts: 0,
 			SkillElectronicsWounds: 0,
 			SkillElectronicsMod: -2,
+			SkillElectronicsModSmarts: 0,
 			SkillMechanicsWounds: 0,
 			SkillMechanicsMod: -2,
+			SkillMechanicsModBrawn: 0,
+			SkillMechanicsModSmarts: 0,
 			SkillTreatingWoundsWounds: 0,
 			SkillTreatingWoundsMod: -2,
+			SkillTreatingWoundsModPerception: 0,
+			SkillTreatingWoundsModSmarts: 0,
 			SkillIntimidationWounds: 0,
 			SkillIntimidationMod: -2,
+			SkillIntimidationModBrawn: 0,
+			SkillIntimidationModCharisma: 0,
 			SkillBluffingWounds: 0,
 			SkillBluffingMod: -2,
+			SkillBluffingModAgility: 0,
+			SkillBluffingModCharisma: 0,
 			SkillCharmingWounds: 0,
 			SkillCharmingMod: -2,
+			SkillCharmingModPerception: 0,
+			SkillCharmingModCharisma: 0,
 			SkillTradingWounds: 0,
-			SkillTradingMod: -2
+			SkillTradingMod: -2,
+			SkillTradingModSmarts: 0,
+			SkillTradingModCharisma: 0
 		};
 		
 		for (var key in wounds) {
@@ -610,102 +687,140 @@ function CalcSkillModifiers(wounds){
 		if(values.SkillCloseCombatAdv == 1) mods.SkillCloseCombatMod += 1;
 		if(values.SkillCloseCombatExp == 1) mods.SkillCloseCombatMod += 1;
 		mods.SkillCloseCombatMod -= mods.SkillCloseCombatWounds;
-		mods.SkillCloseCombatModBrawn = Math.min(Number(mods.SkillCloseCombatMod) + Number(values.Brawn), 3);
+		mods.SkillCloseCombatModBrawn = Math.min(Number(mods.SkillCloseCombatMod) + Number(values.BrawnMod), 3);
+		mods.SkillCloseCombatModAgility = Math.min(Number(mods.SkillCloseCombatMod) + Number(values.AgilitySecondaryMod), 3);
 		
 		if(values.SkillShootingFirearmsProf == 1) mods.SkillShootingFirearmsMod += 2;
 		if(values.SkillShootingFirearmsAdv == 1) mods.SkillShootingFirearmsMod += 1;
 		if(values.SkillShootingFirearmsExp == 1) mods.SkillShootingFirearmsMod += 1;
 		mods.SkillShootingFirearmsMod -= mods.SkillShootingFirearmsWounds;
+		mods.SkillShootingFirearmsModPerception = Math.min(Number(mods.SkillShootingFirearmsMod) + Number(values.PerceptionMod), 3);
+		mods.SkillShootingFirearmsModAgility = Math.min(Number(mods.SkillShootingFirearmsMod) + Number(values.AgilitySecondaryMod), 3);
 		
 		if(values.SkillSharpshootingProf == 1) mods.SkillSharpshootingMod += 2;
 		if(values.SkillSharpshootingAdv == 1) mods.SkillSharpshootingMod += 1;
 		if(values.SkillSharpshootingExp == 1) mods.SkillSharpshootingMod += 1;
 		mods.SkillSharpshootingMod -= mods.SkillSharpshootingWounds;
+		mods.SkillSharpshootingModPerception = Math.min(Number(mods.SkillSharpshootingMod) + Number(values.PerceptionMod), 3);
 		
 		if(values.SkillHeavyWeaponryProf == 1) mods.SkillHeavyWeaponryMod += 2;
 		if(values.SkillHeavyWeaponryAdv == 1) mods.SkillHeavyWeaponryMod += 1;
 		if(values.SkillHeavyWeaponryExp == 1) mods.SkillHeavyWeaponryMod += 1;
 		mods.SkillHeavyWeaponryMod -= mods.SkillHeavyWeaponryWounds;
+		mods.SkillHeavyWeaponryModBrawn = Math.min(Number(mods.SkillHeavyWeaponryMod) + Number(values.BrawnMod), 3);
+		mods.SkillHeavyWeaponryModEndurance = Math.min(Number(mods.SkillHeavyWeaponryMod) + Number(values.EnduranceSecondaryMod), 3);
 		
 		if(values.SkillUsingExplosivesProf == 1) mods.SkillUsingExplosivesMod += 2;
 		if(values.SkillUsingExplosivesAdv == 1) mods.SkillUsingExplosivesMod += 1;
 		if(values.SkillUsingExplosivesExp == 1) mods.SkillUsingExplosivesMod += 1;
 		mods.SkillUsingExplosivesMod -= mods.SkillUsingExplosivesWounds;
+		mods.SkillUsingExplosivesModAgility = Math.min(Number(mods.SkillUsingExplosivesMod) + Number(values.AgilityMod), 3);
+		mods.SkillUsingExplosivesModSmarts = Math.min(Number(mods.SkillUsingExplosivesMod) + Number(values.SmartsSecondaryMod), 3);
 		
 		if(values.SkillAthleticsProf == 1) mods.SkillAthleticsMod += 2;
 		if(values.SkillAthleticsAdv == 1) mods.SkillAthleticsMod += 1;
 		if(values.SkillAthleticsExp == 1) mods.SkillAthleticsMod += 1;
 		mods.SkillAthleticsMod -= mods.SkillAthleticsWounds;
+		mods.SkillAthleticsModBrawn = Math.min(Number(mods.SkillAthleticsMod) + Number(values.BrawnMod), 3);
+		mods.SkillAthleticsModAgility = Math.min(Number(mods.SkillAthleticsMod) + Number(values.AgilityMod), 3);
+		mods.SkillAthleticsModEndurance = Math.min(Number(mods.SkillAthleticsMod) + Number(values.EnduranceSecondaryMod), 3);
 		
 		if(values.SkillSneakingProf == 1) mods.SkillSneakingMod += 2;
 		if(values.SkillSneakingAdv == 1) mods.SkillSneakingMod += 1;
 		if(values.SkillSneakingExp == 1) mods.SkillSneakingMod += 1;
 		mods.SkillSneakingMod -= mods.SkillSneakingWounds;
+		mods.SkillSneakingModPerception = Math.min(Number(mods.SkillSneakingMod) + Number(values.PerceptionSecondaryMod), 3);
+		mods.SkillSneakingModAgility = Math.min(Number(mods.SkillSneakingMod) + Number(values.AgilityMod), 3);
 		
 		if(values.SkillPathfindingProf == 1) mods.SkillPathfindingMod += 2;
 		if(values.SkillPathfindingAdv == 1) mods.SkillPathfindingMod += 1;
 		if(values.SkillPathfindingExp == 1) mods.SkillPathfindingMod += 1;
 		mods.SkillPathfindingMod -= mods.SkillPathfindingWounds;
+		mods.SkillPathfindingModPerception = Math.min(Number(mods.SkillPathfindingMod) + Number(values.PerceptionMod), 3);
+		mods.SkillPathfindingModAgility = Math.min(Number(mods.SkillPathfindingMod) + Number(values.AgilitySecondaryMod), 3);
 		
 		if(values.SkillDrivingProf == 1) mods.SkillDrivingMod += 2;
 		if(values.SkillDrivingAdv == 1) mods.SkillDrivingMod += 1;
 		if(values.SkillDrivingExp == 1) mods.SkillDrivingMod += 1;
 		mods.SkillDrivingMod -= mods.SkillDrivingWounds;
+		mods.SkillDrivingModPerception = Math.min(Number(mods.SkillDrivingMod) + Number(values.PerceptionSecondaryMod), 3);
+		mods.SkillDrivingModAgility = Math.min(Number(mods.SkillDrivingMod) + Number(values.AgilityMod), 3);
 		
 		if(values.SkillLockpickingProf == 1) mods.SkillLockpickingMod += 2;
 		if(values.SkillLockpickingAdv == 1) mods.SkillLockpickingMod += 1;
 		if(values.SkillLockpickingExp == 1) mods.SkillLockpickingMod += 1;
 		mods.SkillLockpickingMod -= mods.SkillLockpickingWounds;
+		mods.SkillLockpickingModPerception = Math.min(Number(mods.SkillLockpickingMod) + Number(values.PerceptionMod), 3);
+		mods.SkillLockpickingModAgility = Math.min(Number(mods.SkillLockpickingMod) + Number(values.AgilitySecondaryMod), 3);
 		
 		if(values.SkillStealingProf == 1) mods.SkillStealingMod += 2;
 		if(values.SkillStealingAdv == 1) mods.SkillStealingMod += 1;
 		if(values.SkillStealingExp == 1) mods.SkillStealingMod += 1;
 		mods.SkillStealingMod -= mods.SkillStealingWounds;
+		mods.SkillStealingModPerception = Math.min(Number(mods.SkillStealingMod) + Number(values.PerceptionSecondaryMod), 3);
+		mods.SkillStealingModAgility = Math.min(Number(mods.SkillStealingMod) + Number(values.AgilityMod), 3);
 		
 		if(values.SkillScavengingProf == 1) mods.SkillScavengingMod += 2;
 		if(values.SkillScavengingAdv == 1) mods.SkillScavengingMod += 1;
 		if(values.SkillScavengingExp == 1) mods.SkillScavengingMod += 1;
 		mods.SkillScavengingMod -= mods.SkillScavengingWounds;
+		mods.SkillScavengingModBrawn = Math.min(Number(mods.SkillScavengingMod) + Number(values.BrawnMod), 3);
+		mods.SkillScavengingModSmarts = Math.min(Number(mods.SkillScavengingMod) + Number(values.SmartsSecondaryMod), 3);
+		mods.SkillScavengingModEndurance = Math.min(Number(mods.SkillScavengingMod) + Number(values.EnduranceSecondaryMod), 3);
 		
 		if(values.SkillChemistryProf == 1) mods.SkillChemistryMod += 2;
 		if(values.SkillChemistryAdv == 1) mods.SkillChemistryMod += 1;
 		if(values.SkillChemistryExp == 1) mods.SkillChemistryMod += 1;
 		mods.SkillChemistryMod -= mods.SkillChemistryWounds;
+		mods.SkillChemistryModSmarts = Math.min(Number(mods.SkillChemistryMod) + Number(values.SmartsMod), 3);
 		
 		if(values.SkillElectronicsProf == 1) mods.SkillElectronicsMod += 2;
 		if(values.SkillElectronicsAdv == 1) mods.SkillElectronicsMod += 1;
 		if(values.SkillElectronicsExp == 1) mods.SkillElectronicsMod += 1;
 		mods.SkillElectronicsMod -= mods.SkillElectronicsWounds;
+		mods.SkillElectronicsModSmarts = Math.min(Number(mods.SkillElectronicsMod) + Number(values.SmartsMod), 3);
 		
 		if(values.SkillMechanicsProf == 1) mods.SkillMechanicsMod += 2;
 		if(values.SkillMechanicsAdv == 1) mods.SkillMechanicsMod += 1;
 		if(values.SkillMechanicsExp == 1) mods.SkillMechanicsMod += 1;
 		mods.SkillMechanicsMod -= mods.SkillMechanicsWounds;
+		mods.SkillMechanicsModBrawn = Math.min(Number(mods.SkillMechanicsMod) + Number(values.BrawnSecondaryMod), 3);
+		mods.SkillMechanicsModSmarts = Math.min(Number(mods.SkillMechanicsMod) + Number(values.SmartsMod), 3);
 		
 		if(values.SkillTreatingWoundsProf == 1) mods.SkillTreatingWoundsMod += 2;
 		if(values.SkillTreatingWoundsAdv == 1) mods.SkillTreatingWoundsMod += 1;
 		if(values.SkillTreatingWoundsExp == 1) mods.SkillTreatingWoundsMod += 1;
 		mods.SkillTreatingWoundsMod -= mods.SkillTreatingWoundsWounds;
+		mods.SkillTreatingWoundsModPerception = Math.min(Number(mods.SkillTreatingWoundsMod) + Number(values.PerceptionSecondaryMod), 3);
+		mods.SkillTreatingWoundsModSmarts = Math.min(Number(mods.SkillTreatingWoundsMod) + Number(values.SmartsMod), 3);
 		
 		if(values.SkillIntimidationProf == 1) mods.SkillIntimidationMod += 2;
 		if(values.SkillIntimidationAdv == 1) mods.SkillIntimidationMod += 1;
 		if(values.SkillIntimidationExp == 1) mods.SkillIntimidationMod += 1;
 		mods.SkillIntimidationMod -= mods.SkillIntimidationWounds;
+		mods.SkillIntimidationModBrawn = Math.min(Number(mods.SkillIntimidationMod) + Number(values.BrawnSecondaryMod), 3);
+		mods.SkillIntimidationModCharisma = Math.min(Number(mods.SkillIntimidationMod) + Number(values.CharismaMod), 3);
 		
 		if(values.SkillBluffingProf == 1) mods.SkillBluffingMod += 2;
 		if(values.SkillBluffingAdv == 1) mods.SkillBluffingMod += 1;
 		if(values.SkillBluffingExp == 1) mods.SkillBluffingMod += 1;
 		mods.SkillBluffingMod -= mods.SkillBluffingWounds;
+		mods.SkillBluffingModAgility = Math.min(Number(mods.SkillBluffingMod) + Number(values.AgilitySecondaryMod), 3);
+		mods.SkillBluffingModCharisma = Math.min(Number(mods.SkillBluffingMod) + Number(values.CharismaMod), 3);
 		
 		if(values.SkillCharmingProf == 1) mods.SkillCharmingMod += 2;
 		if(values.SkillCharmingAdv == 1) mods.SkillCharmingMod += 1;
 		if(values.SkillCharmingExp == 1) mods.SkillCharmingMod += 1;
 		mods.SkillCharmingMod -= mods.SkillCharmingWounds;
+		mods.SkillCharmingModPerception = Math.min(Number(mods.SkillCharmingMod) + Number(values.PerceptionSecondaryMod), 3);
+		mods.SkillCharmingModCharisma = Math.min(Number(mods.SkillCharmingMod) + Number(values.CharismaMod), 3);
 		
 		if(values.SkillTradingProf == 1) mods.SkillTradingMod += 2;
 		if(values.SkillTradingAdv == 1) mods.SkillTradingMod += 1;
 		if(values.SkillTradingExp == 1) mods.SkillTradingMod += 1;
 		mods.SkillTradingMod -= mods.SkillTradingWounds;
+		mods.SkillTradingModSmarts = Math.min(Number(mods.SkillTradingMod) + Number(values.SmartsSecondaryMod), 3);
+		mods.SkillTradingModCharisma = Math.min(Number(mods.SkillTradingMod) + Number(values.CharismaMod), 3);
 		
 		setAttrs(mods);
 	});
