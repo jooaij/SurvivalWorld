@@ -274,32 +274,32 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .sheet-brawnbtn{
-	left:45px;
+	left:90px;
 	width:60px;
 }
 
 .sheet-agilitybtn{
-	left:171px;
+	left:216px;
 	width:69px;
 }
 
 .sheet-endurancebtn{
-	left:280px;
+	left:325px;
 	width:100px;
 }
 
 .sheet-perceptionbtn{
-	left:410px;
+	left:455px;
 	width:100px;
 }
 
 .sheet-smartsbtn{
-	left:554px;
+	left:599px;
 	width:64px;
 }
 
 .sheet-charismabtn{
-	left:675px;
+	left:720px;
 	width:84px;
 }
 
@@ -550,7 +550,6 @@ input[type=number]::-webkit-outer-spin-button {
 .sheet-skill_totalthirdcolumn{
     left: 430px;
 }
-
 
 .sheet-skill_closecombat{
     top:309px;
