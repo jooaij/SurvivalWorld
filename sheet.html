@@ -307,7 +307,7 @@
               <input type="number" class='skillwnd skill_bluffing' name="attr_SkillBluffingWounds_Vis" value="@{SkillBluffingWounds}" disabled="true"/>
               <input type="number" class='skillmod skill_bluffing' name="attr_SkillBluffingMod_Vis" value="@{SkillBluffingMod}" disabled="true" />
               <input type="number" class='skillmod skill_bluffing skill_totalfirstcolumn' name="attr_SkillBluffingModAgility_Vis" value="@{SkillBluffingModAgility}" disabled="true" />
-              <input type="number" class='skillmod skill_intimidation skill_totalsecondcolumn' name="attr_SkillBluffingModCharisma_Vis" value="@{SkillBluffingModCharisma}" disabled="true" />
+              <input type="number" class='skillmod skill_bluffing skill_totalsecondcolumn' name="attr_SkillBluffingModCharisma_Vis" value="@{SkillBluffingModCharisma}" disabled="true" />
           
           
 			<input type="hidden" name="attr_skill_charming_statquery" value="?{Stat|CHA,@{CharismaMod}[CHA]|per, @{PerceptionSecondaryMod}[per]}">
@@ -320,7 +320,7 @@
               <input type="number" class='skillwnd skill_charming' name="attr_SkillCharmingWounds_Vis" value="@{SkillCharmingWounds}" disabled="true"/>
               <input type="number" class='skillmod skill_charming' name="attr_SkillCharmingMod_Vis" value="@{SkillCharmingMod}" disabled="true" />
               <input type="number" class='skillmod skill_charming skill_totalfirstcolumn' name="attr_SkillCharmingModPerception_Vis" value="@{SkillCharmingModPerception}" disabled="true" />
-              <input type="number" class='skillmod skill_intimidation skill_totalsecondcolumn' name="attr_SkillCharmingModCharisma_Vis" value="@{SkillCharmingModCharisma}" disabled="true" />
+              <input type="number" class='skillmod skill_charming skill_totalsecondcolumn' name="attr_SkillCharmingModCharisma_Vis" value="@{SkillCharmingModCharisma}" disabled="true" />
           
           
 			<input type="hidden" name="attr_skill_trading_statquery" value="?{Stat|CHA,@{CharismaMod}[CHA]|smr, @{SmartsSecondaryMod}[smr]}">
@@ -333,7 +333,7 @@
               <input type="number" class='skillwnd skill_trading' name="attr_SkillTradingWounds_Vis" value="@{SkillTradingWounds}" disabled="true"/>
               <input type="number" class='skillmod skill_trading' name="attr_SkillTradingMod_Vis" value="@{SkillTradingMod}" disabled="true" />
               <input type="number" class='skillmod skill_trading skill_totalfirstcolumn' name="attr_SkillTradingModSmarts_Vis" value="@{SkillTradingModSmarts}" disabled="true" />
-              <input type="number" class='skillmod skill_intimidation skill_totalsecondcolumn' name="attr_SkillTradingModCharisma_Vis" value="@{SkillTradingModCharisma}" disabled="true" />
+              <input type="number" class='skillmod skill_trading skill_totalsecondcolumn' name="attr_SkillTradingModCharisma_Vis" value="@{SkillTradingModCharisma}" disabled="true" />
           
 		  
       <textarea class="attr_bonds" name="attr_bonds"></textarea>
@@ -468,11 +468,9 @@ function GetWounds(){
 		if(ids.length > 0){
 			getAttrs(ids, function(values){
 				CalcStatModifiers(values);
-				CalcSkillModifiers(values);
 			});
 		} else {
 			CalcStatModifiers(ids);
-			CalcSkillModifiers(ids);
 		}
    });
 }
@@ -552,6 +550,9 @@ function CalcStatModifiers(wounds){
 		}
 		
 		setAttrs(mods);
+
+	
+		CalcSkillModifiers(wounds);
 	});
 }
 
