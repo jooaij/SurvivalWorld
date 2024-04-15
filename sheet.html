@@ -79,8 +79,10 @@
       <input type="number" name="attr_CharismaSecondaryMod" class="Hidden" />
 	  <input type="number" name="attr_CharismaSecondaryMod_Vis" class="Hidden" value="@{CharismaSecondaryMod}" disabled="true" />
 	  
+			<input type="hidden" name="attr_skill_rollmodifierquery" value="?{Is the weapon Mounted or a Support weapon|Yes,0[Mounted or a Support weapons]|No, -1[Not mounted or not a support weapon]}">
+			
 			<input type="hidden" name="attr_skill_closecombat_statquery" value="?{Stat|BRN,@{BrawnMod}[BRN]|agi, @{AgilitySecondaryMod}[agi]|AGI (precise), @{AgilityMod}[AGI (precise)]}">
-              <button class='textbutton btn_closecombat skill_closecombat' type='roll' value='&{template:survival} {{rollname=Close Combat Check}} {{roll=[[2d6 + @{skill_closecombat_statquery}+@{SkillCloseCombatMod}]]}}'></button>
+              <button class='textbutton btn_closecombat skill_closecombat' type='roll' value='&{template:survival} {{rollname=Close Combat Check}} {{roll=[[2d6 + {(@{skill_closecombat_statquery}+@{SkillCloseCombatMod}+?{RollModifier}),3}kl1]]}}'></button>
               <input type='checkbox' class='prof skill_closecombat' name='attr_SkillCloseCombatProf' value='1' />
               <input type='checkbox' class='adv skill_closecombat' name='attr_SkillCloseCombatAdv' value='1' />
               <input type='checkbox' class='exp skill_closecombat' name='attr_SkillCloseCombatExp' value='1' />
@@ -93,7 +95,7 @@
 
 
 			<input type="hidden" name="attr_skill_firearms_statquery" value="?{Stat|PER,@{PerceptionMod}[PER]|agi, @{AgilitySecondaryMod}[agi]|AGI (quickdraw), @{AgilityMod}[AGI (quickdraw)]}">
-              <button class='textbutton btn_firearms skill_firearms' type='roll' value='&{template:survival} {{rollname=Shooting Firearms Check}} {{roll=[[2d6 + @{skill_firearms_statquery}+@{SkillShootingFirearmsMod}[SKILL]]]}}' name='roll_SkillShootingFirearmsCheck'></button>
+              <button class='textbutton btn_firearms skill_firearms' type='roll' value='&{template:survival} {{rollname=Shooting Firearms Check}} {{roll=[[2d6 + {(@{skill_firearms_statquery}+@{SkillShootingFirearmsMod}[SKILL]+?{RollModifier}),3}kl1]]}}' name='roll_SkillShootingFirearmsCheck'></button>
               <input type='checkbox' class='prof skill_firearms'  name='attr_SkillShootingFirearmsProf' value='1' />
               <input type='checkbox' class='adv skill_firearms' name='attr_SkillShootingFirearmsAdv' value='1' />
               <input type='checkbox' class='exp skill_firearms' name='attr_SkillShootingFirearmsExp' value='1' />
@@ -105,7 +107,7 @@
               <input type="number" class='skillmod skill_firearms skill_totalsecondcolumn' name="attr_SkillShootingFirearmsModPerception_Vis" value="@{SkillShootingFirearmsModPerception}" disabled="true" />
 
 
-              <button class='textbutton btn_sharpshooting skill_sharpshooting' type='roll' value='&{template:survival} {{rollname=Sharpshooting Check}} {{roll=[[2d6 + @{PerceptionMod}[PER]+@{SkillSharpshootingMod}[SKILL]]]}}' name='roll_SkillSharpshootingCheck'></button>
+              <button class='textbutton btn_sharpshooting skill_sharpshooting' type='roll' value='&{template:survival} {{rollname=Sharpshooting Check}} {{roll=[[2d6 + {(@{PerceptionMod}[PER]+@{SkillSharpshootingMod}[SKILL]+?{RollModifier}),3}kl1]]}}' name='roll_SkillSharpshootingCheck'></button>
               <input type='checkbox' class='prof skill_sharpshooting'  name='attr_SkillSharpshootingProf' value='1' />
               <input type='checkbox' class='adv skill_sharpshooting' name='attr_SkillSharpshootingAdv' value='1' />
               <input type='checkbox' class='exp skill_sharpshooting' name='attr_SkillSharpshootingExp' value='1' />
@@ -118,7 +120,7 @@
 
 			<input type="hidden" name="attr_skill_heavyweaponry_statquery" value="?{Stat|BRN,@{BrawnMod}[BRN]|end, @{EnduranceSecondaryMod}[end]|per (scoped), @{PerceptionSecondaryMod}[per (scoped)]}">
 			<input type="hidden" name="attr_skill_heavyweaponry_mountedquery" value="?{Is the weapon Mounted or a Support weapon|Yes,0[Mounted or a Support weapons]|No, -1[Not mounted or not a support weapon]}">
-              <button class='textbutton btn_heavyweaponry skill_heavyweaponry' type='roll' value='&{template:survival} {{rollname=Heavy Weaponry Check}} {{roll=[[2d6 + @{skill_heavyweaponry_statquery} + @{skill_heavyweaponry_mountedquery}+@{SkillHeavyWeaponryMod}[SKILL]]]}}' name='roll_SkillHeavyWeaponryCheck'></button>
+              <button class='textbutton btn_heavyweaponry skill_heavyweaponry' type='roll' value='&{template:survival} {{rollname=Heavy Weaponry Check}} {{roll=[[2d6 + {(@{skill_heavyweaponry_statquery} + @{skill_heavyweaponry_mountedquery}+@{SkillHeavyWeaponryMod}[SKILL]+?{RollModifier}),3}kl1]]}}' name='roll_SkillHeavyWeaponryCheck'></button>
               <input type='checkbox' class='prof skill_heavyweaponry'  name='attr_SkillHeavyWeaponryProf' value='1' />
               <input type='checkbox' class='adv skill_heavyweaponry' name='attr_SkillHeavyWeaponryAdv' value='1' />
               <input type='checkbox' class='exp skill_heavyweaponry' name='attr_SkillHeavyWeaponryExp' value='1' />
@@ -131,7 +133,7 @@
 
 
 			<input type="hidden" name="attr_skill_explosives_statquery" value="?{Stat|AGI,@{AgilityMod}[AGI]|smr, @{SmartsSecondaryMod}[smr]}">
-              <button class='textbutton btn_explosives skill_explosives' type='roll' value='&{template:survival} {{rollname=Using Explosives Check}} {{roll=[[2d6 + @{skill_explosives_statquery}+@{SkillUsingExplosivesMod}[SKILL]]]}}' name='roll_SkillUsingExplosivesCheck'></button>
+              <button class='textbutton btn_explosives skill_explosives' type='roll' value='&{template:survival} {{rollname=Using Explosives Check}} {{roll=[[2d6 + {(@{skill_explosives_statquery}+@{SkillUsingExplosivesMod}[SKILL]+?{RollModifier}),3}kl1]]}}' name='roll_SkillUsingExplosivesCheck'></button>
               <input type='checkbox' class='prof skill_explosives'  name='attr_SkillUsingExplosivesProf' value='1' />
               <input type='checkbox' class='adv skill_explosives' name='attr_SkillUsingExplosivesAdv' value='1' />
               <input type='checkbox' class='exp skill_explosives' name='attr_SkillUsingExplosivesExp' value='1' />
@@ -144,7 +146,7 @@
 
 
 			<input type="hidden" name="attr_skill_athletics_statquery" value="?{Stat|BRN,@{BrawnMod}[BRN]|AGI, @{AgilityMod}[AGI]|end, @{EnduranceSecondaryMod}[end]}">
-              <button class='textbutton btn_athletics skill_athletics' type='roll' value='&{template:survival} {{rollname=Athletics Check}} {{roll=[[2d6 + @{skill_athletics_statquery}+@{SkillAthleticsMod}[SKILL]]]}}' name='roll_SkillAthleticsCheck'></button>
+              <button class='textbutton btn_athletics skill_athletics' type='roll' value='&{template:survival} {{rollname=Athletics Check}} {{roll=[[2d6 + {(@{skill_athletics_statquery}+@{SkillAthleticsMod}[SKILL]+?{RollModifier}),3}kl1]]}}' name='roll_SkillAthleticsCheck'></button>
               <input type='checkbox' class='prof skill_athletics'  name='attr_SkillAthleticsProf' value='1' />
               <input type='checkbox' class='adv skill_athletics' name='attr_SkillAthleticsAdv' value='1' />
               <input type='checkbox' class='exp skill_athletics' name='attr_SkillAthleticsExp' value='1' />
@@ -158,7 +160,7 @@
 
 
 			<input type="hidden" name="attr_skill_sneaking_statquery" value="?{Stat|AGI,@{AgilityMod}[AGI]|per, @{PerceptionSecondaryMod}[per]}">
-              <button class='textbutton btn_sneaking skill_sneaking' type='roll' value='&{template:survival} {{rollname=Sneaking Check}} {{roll=[[2d6 + @{skill_sneaking_statquery}+@{SkillSneakingMod}[SKILL]]]}}' name='roll_SkillSneakingCheck'></button>
+              <button class='textbutton btn_sneaking skill_sneaking' type='roll' value='&{template:survival} {{rollname=Sneaking Check}} {{roll=[[2d6 + {(@{skill_sneaking_statquery}+@{SkillSneakingMod}[SKILL]+?{RollModifier}),3}kl1]]}}' name='roll_SkillSneakingCheck'></button>
               <input type='checkbox' class='prof skill_sneaking'  name='attr_SkillSneakingProf' value='1' />
               <input type='checkbox' class='adv skill_sneaking' name='attr_SkillSneakingAdv' value='1' />
               <input type='checkbox' class='exp skill_sneaking' name='attr_SkillSneakingExp' value='1' />
@@ -171,7 +173,7 @@
 
 
 			<input type="hidden" name="attr_skill_pathfinding_statquery" value="?{Stat|PER,@{PerceptionMod}[PER]|agi, @{AgilitySecondaryMod}[agi]}">
-              <button class='textbutton btn_pathfinding skill_pathfinding' type='roll' value='&{template:survival} {{rollname=Pathfinding Check}} {{roll=[[2d6 + @{skill_pathfinding_statquery}+@{SkillPathfindingMod}[SKILL]]]}}' name='roll_SkillPathfindingCheck'></button>
+              <button class='textbutton btn_pathfinding skill_pathfinding' type='roll' value='&{template:survival} {{rollname=Pathfinding Check}} {{roll=[[2d6 + {(@{skill_pathfinding_statquery}+@{SkillPathfindingMod}[SKILL]+?{RollModifier}),3}kl1]]}}' name='roll_SkillPathfindingCheck'></button>
               <input type='checkbox' class='prof skill_pathfinding'  name='attr_SkillPathfindingProf' value='1' />
               <input type='checkbox' class='adv skill_pathfinding' name='attr_SkillPathfindingAdv' value='1' />
               <input type='checkbox' class='exp skill_pathfinding' name='attr_SkillPathfindingExp' value='1' />
@@ -184,7 +186,7 @@
 
 
 			<input type="hidden" name="attr_skill_driving_statquery" value="?{Stat|AGI,@{AgilityMod}[AGI]|per, @{PerceptionSecondaryMod}[per]}">
-              <button class='textbutton btn_driving skill_driving' type='roll' value='&{template:survival} {{rollname=Driving Check}} {{roll=[[2d6 + @{skill_driving_statquery}+@{SkillDrivingMod}[SKILL]]]}}' name='roll_SkillDrivingCheck'></button>
+              <button class='textbutton btn_driving skill_driving' type='roll' value='&{template:survival} {{rollname=Driving Check}} {{roll=[[2d6 + {(@{skill_driving_statquery}+@{SkillDrivingMod}[SKILL]+?{RollModifier}),3}kl1]]}}' name='roll_SkillDrivingCheck'></button>
               <input type='checkbox' class='prof skill_driving'  name='attr_SkillDrivingProf' value='1' />
               <input type='checkbox' class='adv skill_driving' name='attr_SkillDrivingAdv' value='1' />
               <input type='checkbox' class='exp skill_driving' name='attr_SkillDrivingExp' value='1' />
@@ -197,7 +199,7 @@
 
 
 			<input type="hidden" name="attr_skill_lockpicking_statquery" value="?{Stat|PER,@{PerceptionMod}[PER]|agi, @{AgilitySecondaryMod}[agi]}">
-              <button class='textbutton btn_lockpicking skill_lockpicking' type='roll' value='&{template:survival} {{rollname=Lockpicking Check}} {{roll=[[2d6 + @{skill_lockpicking_statquery}+@{SkillLockpickingMod}[SKILL]]]}}' name='roll_SkillLockpickingCheck'></button>
+              <button class='textbutton btn_lockpicking skill_lockpicking' type='roll' value='&{template:survival} {{rollname=Lockpicking Check}} {{roll=[[2d6 + {(@{skill_lockpicking_statquery}+@{SkillLockpickingMod}[SKILL]+?{RollModifier}),3}kl1]]}}' name='roll_SkillLockpickingCheck'></button>
               <input type='checkbox' class='prof skill_lockpicking'  name='attr_SkillLockpickingProf' value='1' />
               <input type='checkbox' class='adv skill_lockpicking' name='attr_SkillLockpickingAdv' value='1' />
               <input type='checkbox' class='exp skill_lockpicking' name='attr_SkillLockpickingExp' value='1' />
@@ -210,7 +212,7 @@
 
 
 			<input type="hidden" name="attr_skill_stealing_statquery" value="?{Stat|AGI,@{AgilityMod}[AGI]|per, @{PerceptionSecondaryMod}[per]}">
-              <button class='textbutton btn_stealing skill_stealing' type='roll' value='&{template:survival} {{rollname=Stealing Check}} {{roll=[[2d6 + @{skill_stealing_statquery}+@{SkillStealingMod}[SKILL]]]}}' name='roll_SkillStealingCheck'></button>
+              <button class='textbutton btn_stealing skill_stealing' type='roll' value='&{template:survival} {{rollname=Stealing Check}} {{roll=[[2d6 + {(@{skill_stealing_statquery}+@{SkillStealingMod}[SKILL]+?{RollModifier}),3}kl1]]}}' name='roll_SkillStealingCheck'></button>
               <input type='checkbox' class='prof skill_stealing'  name='attr_SkillStealingProf' value='1' />
               <input type='checkbox' class='adv skill_stealing' name='attr_SkillStealingAdv' value='1' />
               <input type='checkbox' class='exp skill_stealing' name='attr_SkillStealingExp' value='1' />
@@ -223,7 +225,7 @@
 
 
 			<input type="hidden" name="attr_skill_scavenging_statquery" value="?{Stat|BRN,@{BrawnMod}[BRN]|smr, @{SmartsSecondaryMod}[smr]|end, @{EnduranceSecondaryMod}[end]}">
-              <button class='textbutton btn_scavenging skill_scavenging' type='roll' value='&{template:survival} {{rollname=Scavenging Check}} {{roll=[[2d6 + @{skill_scavenging_statquery}+@{SkillScavengingMod}[SKILL]]]}}' name='roll_SkillScavengingCheck'></button>
+              <button class='textbutton btn_scavenging skill_scavenging' type='roll' value='&{template:survival} {{rollname=Scavenging Check}} {{roll=[[2d6 + {(@{skill_scavenging_statquery}+@{SkillScavengingMod}[SKILL]+?{RollModifier}),3}kl1]]}}' name='roll_SkillScavengingCheck'></button>
               <input type='checkbox' class='prof skill_scavenging'  name='attr_SkillScavengingProf' value='1' />
               <input type='checkbox' class='adv skill_scavenging' name='attr_SkillScavengingAdv' value='1' />
               <input type='checkbox' class='exp skill_scavenging' name='attr_SkillScavengingExp' value='1' />
@@ -236,7 +238,7 @@
               <input type="number" class='skillmod skill_scavenging skill_totalthirdcolumn' name="attr_SkillScavengingModSmarts_Vis" value="@{SkillScavengingModSmarts}" disabled="true" />
 
 
-              <button class='textbutton btn_chemistry skill_chemistry' type='roll' value='&{template:survival} {{rollname=Chemistry Check}} {{roll=[[2d6 + @{SmartsMod}[SMR]+@{SkillChemistryMod}[SKILL]]]}}' name='roll_SkillChemistryCheck'></button>
+              <button class='textbutton btn_chemistry skill_chemistry' type='roll' value='&{template:survival} {{rollname=Chemistry Check}} {{roll=[[2d6 + {(@{SmartsMod}[SMR]+@{SkillChemistryMod}[SKILL]+?{RollModifier}),3}kl1]]}}' name='roll_SkillChemistryCheck'></button>
               <input type='checkbox' class='prof skill_chemistry'  name='attr_SkillChemistryProf' value='1' />
               <input type='checkbox' class='adv skill_chemistry' name='attr_SkillChemistryAdv' value='1' />
               <input type='checkbox' class='exp skill_chemistry' name='attr_SkillChemistryExp' value='1' />
@@ -247,7 +249,7 @@
               <input type="number" class='skillmod skill_chemistry skill_totalfirstcolumn' name="attr_SkillChemistryModSmarts_Vis" value="@{SkillChemistryModSmarts}" disabled="true" />
 
 
-              <button class='textbutton btn_electronics skill_electronics' type='roll' value='&{template:survival} {{rollname=Electronics Check}} {{roll=[[2d6 + @{SmartsMod}[SMR]+@{SkillElectronicsMod}[SKILL]]]}}' name='roll_SkillElectronicsCheck'></button>
+              <button class='textbutton btn_electronics skill_electronics' type='roll' value='&{template:survival} {{rollname=Electronics Check}} {{roll=[[2d6 + {(@{SmartsMod}[SMR]+@{SkillElectronicsMod}[SKILL]+?{RollModifier}),3}kl1]]}}' name='roll_SkillElectronicsCheck'></button>
               <input type='checkbox' class='prof skill_electronics'  name='attr_SkillElectronicsProf' value='1' />
               <input type='checkbox' class='adv skill_electronics' name='attr_SkillElectronicsAdv' value='1' />
               <input type='checkbox' class='exp skill_electronics' name='attr_SkillElectronicsExp' value='1' />
@@ -259,7 +261,7 @@
 
 
 			<input type="hidden" name="attr_skill_mechanics_statquery" value="?{Stat|SMR,@{SmartsMod}[SMR]|brn, @{BrawnSecondaryMod}[brn]}">
-              <button class='textbutton btn_mechanics skill_mechanics' type='roll' value='&{template:survival} {{rollname=Mechanics Check}} {{roll=[[2d6 + @{skill_mechanics_statquery}+@{SkillMechanicsMod}[SKILL]]]}}' name='roll_SkillMechanicsCheck'></button>
+              <button class='textbutton btn_mechanics skill_mechanics' type='roll' value='&{template:survival} {{rollname=Mechanics Check}} {{roll=[[2d6 + {(@{skill_mechanics_statquery}+@{SkillMechanicsMod}[SKILL]+?{RollModifier}),3}kl1]]}}' name='roll_SkillMechanicsCheck'></button>
               <input type='checkbox' class='prof skill_mechanics'  name='attr_SkillMechanicsProf' value='1' />
               <input type='checkbox' class='adv skill_mechanics' name='attr_SkillMechanicsAdv' value='1' />
               <input type='checkbox' class='exp skill_mechanics' name='attr_SkillMechanicsExp' value='1' />
@@ -272,7 +274,7 @@
 
 
 			<input type="hidden" name="attr_skill_treatingwounds_statquery" value="?{Stat|SMR,@{SmartsMod}[SMR]|per, @{PerceptionSecondaryMod}[per]}">
-              <button class='textbutton btn_treatingwounds skill_treatingwounds' type='roll' value='&{template:survival} {{rollname=Treating Wounds Check}} {{roll=[[2d6 + @{skill_treatingwounds_statquery}+@{SkillTreatingWoundsMod}[SKILL]]]}}' name='roll_SkillTreatingWoundsCheck'></button>
+              <button class='textbutton btn_treatingwounds skill_treatingwounds' type='roll' value='&{template:survival} {{rollname=Treating Wounds Check}} {{roll=[[2d6 + {(@{skill_treatingwounds_statquery}+@{SkillTreatingWoundsMod}[SKILL]+?{RollModifier}),3}kl1]]}}' name='roll_SkillTreatingWoundsCheck'></button>
               <input type='checkbox' class='prof skill_treatingwounds'  name='attr_SkillTreatingWoundsProf' value='1' />
               <input type='checkbox' class='adv skill_treatingwounds' name='attr_SkillTreatingWoundsAdv' value='1' />
               <input type='checkbox' class='exp skill_treatingwounds' name='attr_SkillTreatingWoundsExp' value='1' />
@@ -285,7 +287,7 @@
 
 
 			<input type="hidden" name="attr_skill_intimidation_statquery" value="?{Stat|CHA,@{CharismaMod}[CHA]|brn, @{BrawnSecondaryMod}[brn]}">
-              <button class='textbutton btn_intimidation skill_intimidation' type='roll' value='&{template:survival} {{rollname=Intimidation Check}} {{roll=[[2d6 + @{skill_intimidation_statquery}+@{SkillIntimidationMod}[SKILL]]]}}' name='roll_SkillIntimidationCheck'></button>
+              <button class='textbutton btn_intimidation skill_intimidation' type='roll' value='&{template:survival} {{rollname=Intimidation Check}} {{roll=[[2d6 + {(@{skill_intimidation_statquery}+@{SkillIntimidationMod}[SKILL]+?{RollModifier}),3}kl1]]}}' name='roll_SkillIntimidationCheck'></button>
               <input type='checkbox' class='prof skill_intimidation'  name='attr_SkillIntimidationProf' value='1' />
               <input type='checkbox' class='adv skill_intimidation' name='attr_SkillIntimidationAdv' value='1' />
               <input type='checkbox' class='exp skill_intimidation' name='attr_SkillIntimidationExp' value='1' />
@@ -298,7 +300,7 @@
           
           
 			<input type="hidden" name="attr_skill_bluffing_statquery" value="?{Stat|CHA,@{CharismaMod}[CHA]|agi, @{AgilitySecondaryMod}[agi]}">
-              <button class='textbutton btn_bluffing skill_bluffing' type='roll' value='&{template:survival} {{rollname=Bluffing Check}} {{roll=[[2d6 + @{skill_bluffing_statquery}+@{SkillBluffingMod}[SKILL]]]}}' name='roll_SkillBluffingCheck'></button>
+              <button class='textbutton btn_bluffing skill_bluffing' type='roll' value='&{template:survival} {{rollname=Bluffing Check}} {{roll=[[2d6 + {(@{skill_bluffing_statquery}+@{SkillBluffingMod}[SKILL]+?{RollModifier}),3}kl1]]}}' name='roll_SkillBluffingCheck'></button>
               <input type='checkbox' class='prof skill_bluffing'  name='attr_SkillBluffingProf' value='1' />
               <input type='checkbox' class='adv skill_bluffing' name='attr_SkillBluffingAdv' value='1' />
               <input type='checkbox' class='exp skill_bluffing' name='attr_SkillBluffingExp' value='1' />
@@ -311,7 +313,7 @@
           
           
 			<input type="hidden" name="attr_skill_charming_statquery" value="?{Stat|CHA,@{CharismaMod}[CHA]|per, @{PerceptionSecondaryMod}[per]}">
-              <button class='textbutton btn_charming skill_charming' type='roll' value='&{template:survival} {{rollname=Charming Check}} {{roll=[[2d6 + @{skill_charming_statquery}+@{SkillCharmingMod}[SKILL]]]}}' name='roll_SkillCharmingCheck'></button>
+              <button class='textbutton btn_charming skill_charming' type='roll' value='&{template:survival} {{rollname=Charming Check}} {{roll=[[2d6 + {(@{skill_charming_statquery}+@{SkillCharmingMod}[SKILL]+?{RollModifier}),3}kl1]]}}' name='roll_SkillCharmingCheck'></button>
               <input type='checkbox' class='prof skill_charming'  name='attr_SkillCharmingProf' value='1' />
               <input type='checkbox' class='adv skill_charming' name='attr_SkillCharmingAdv' value='1' />
               <input type='checkbox' class='exp skill_charming' name='attr_SkillCharmingExp' value='1' />
@@ -324,7 +326,7 @@
           
           
 			<input type="hidden" name="attr_skill_trading_statquery" value="?{Stat|CHA,@{CharismaMod}[CHA]|smr, @{SmartsSecondaryMod}[smr]}">
-              <button class='textbutton btn_trading skill_trading' type='roll' value='&{template:survival} {{rollname=Trading Check}} {{roll=[[2d6 + @{skill_trading_statquery}+@{SkillTradingMod}[SKILL]]]}}' name='roll_SkillTradingCheck'></button>
+              <button class='textbutton btn_trading skill_trading' type='roll' value='&{template:survival} {{rollname=Trading Check}} {{roll=[[2d6 + {(@{skill_trading_statquery}+@{SkillTradingMod}[SKILL]+?{RollModifier}),3}kl1]]}}' name='roll_SkillTradingCheck'></button>
               <input type='checkbox' class='prof skill_trading'  name='attr_SkillTradingProf' value='1' />
               <input type='checkbox' class='adv skill_trading' name='attr_SkillTradingAdv' value='1' />
               <input type='checkbox' class='exp skill_trading' name='attr_SkillTradingExp' value='1' />
